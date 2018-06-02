@@ -1,7 +1,7 @@
 # TopoShare
 Site Communautaire escalade
 
-###Framework :
+### Framework :
 
 - Java/JEE (JDK 8)
 - Apache Tomcat 9
@@ -15,14 +15,14 @@ Site Communautaire escalade
 - documentation succincte
 - fichiers de configuration
 
-##Étapes de réalisation
+## Étapes de réalisation
 
-###conception :
+### conception :
 
 - Lister les cas d’utilisation
 - Modéliser le domaine fonctionnel (diagramme de classe UML) et le schéma de base de données
 
-###Monter l’environnement de développement :
+### Monter l’environnement de développement :
 
  - Créer les scripts de création de la base de données et le jeu de données de démo
  - Initialiser la base de données PostgreSQL
