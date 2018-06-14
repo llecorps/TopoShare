@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/topo.iml" filepath="$PROJECT_DIR$/topo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topo-business/topo-business.iml" filepath="$PROJECT_DIR$/topo-business/topo-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topo-consumer/topo-consumer.iml" filepath="$PROJECT_DIR$/topo-consumer/topo-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topo-model/topo-model.iml" filepath="$PROJECT_DIR$/topo-model/topo-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topo-technical/topo-technical.iml" filepath="$PROJECT_DIR$/topo-technical/topo-technical.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topo-webapp/topo-webapp.iml" filepath="$PROJECT_DIR$/topo-webapp/topo-webapp.iml" />
+    </modules>
+  </component>
+</project>

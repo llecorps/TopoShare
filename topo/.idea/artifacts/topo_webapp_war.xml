@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="topo-webapp:war">
+    <output-path>$PROJECT_DIR$/topo-webapp/target</output-path>
+    <root id="archive" name="topo-webapp.war">
+      <element id="artifact" artifact-name="topo-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
