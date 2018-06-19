@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="299297924">
+    <data-source source="LOCAL" name="DB_topo" uuid="23a23cd6-7ae5-4a3e-86e8-13a8bfbcb5ba">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/db_topo</jdbc-url>
+    </data-source>
+  </component>
+</project>

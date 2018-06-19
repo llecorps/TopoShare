@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="DB_topo" uuid="23a23cd6-7ae5-4a3e-86e8-13a8bfbcb5ba">
+      <secret-storage>master_key</secret-storage>
+      <user-name>topo</user-name>
+      <schema-pattern>db_topo.pg_catalog db_topo.public</schema-pattern>
+      <default-schemas>db_topo.public</default-schemas>
+    </data-source>
+  </component>
+</project>
