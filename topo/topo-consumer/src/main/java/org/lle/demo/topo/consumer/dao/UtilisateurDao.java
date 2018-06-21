@@ -19,7 +19,8 @@ public class UtilisateurDao {
     public int saveUtilisateur(Utilisateur vUtilisateur){
 
 
-        String query="insert into utilisateur values('"+vUtilisateur.getId()+"','"+vUtilisateur.getUsername()+"','"+vUtilisateur.getEmail()+"','"+vUtilisateur.getPassword()+"')";
+
+        String query="insert into utilisateur (username, email, password) values('"+vUtilisateur.getUsername()+"','"+vUtilisateur.getEmail()+"','"+vUtilisateur.getPassword()+"')";
 
         return jdbcTemplate.update(query);
     }
