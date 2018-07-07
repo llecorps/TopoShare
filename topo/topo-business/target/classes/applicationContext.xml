@@ -31,5 +31,9 @@
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 
+    <bean id="locationdao" class="org.lle.demo.topo.consumer.dao.LocationDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
 
 </beans>

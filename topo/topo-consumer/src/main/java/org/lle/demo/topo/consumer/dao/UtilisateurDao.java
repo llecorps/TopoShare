@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 
 /**
@@ -38,12 +37,6 @@ public class UtilisateurDao {
         RowMapper<Utilisateur> vRowMapper = new UtilisateurRM();
 
         vListUtilisateur = jdbcTemplate.query(vSQL, vRowMapper);
-
-        ListIterator listIterator = vListUtilisateur.listIterator();
-        while(listIterator.hasNext()) {
-            Utilisateur u = (Utilisateur)listIterator.next();
-            System.out.println("Liste DAO="+u);
-        }
 
         return vListUtilisateur;
 

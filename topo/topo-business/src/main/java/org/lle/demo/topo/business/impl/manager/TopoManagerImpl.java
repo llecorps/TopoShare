@@ -7,6 +7,9 @@ import org.lle.demo.topo.model.bean.Topo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by esspressoh on 28.06.18.
  */
@@ -14,6 +17,8 @@ public class TopoManagerImpl {
 
     private String libelle, lieu;
     private int utilisateur;
+
+    protected List<Topo> vListTopo;
 
     /** Logger pour la classe */
     private static final Log LOGGER = LogFactory.getLog(TopoManagerImpl.class);
@@ -34,5 +39,12 @@ public class TopoManagerImpl {
         int status=topodao.saveTopo(new Topo(this.libelle, this.lieu, this.utilisateur));
         System.out.println(status);
 
+    }
+    public List ListTopo() {
+
+        vListTopo = new ArrayList<>() ;
+        vListTopo=topodao.getlistTopo();
+
+        return vListTopo;
     }
 }

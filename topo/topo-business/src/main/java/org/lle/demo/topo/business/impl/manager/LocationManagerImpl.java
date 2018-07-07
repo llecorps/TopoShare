@@ -2,10 +2,13 @@ package org.lle.demo.topo.business.impl.manager;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.lle.demo.topo.consumer.dao.DatasourceDao;
+import org.lle.demo.topo.consumer.dao.LocationDao;
 import org.lle.demo.topo.model.bean.Location;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by esspressoh on 01.07.18.
@@ -15,11 +18,13 @@ public class LocationManagerImpl {
     private String dateDeb, dateFin;
     private int idUtilisateur, idTopo;
 
+    protected List<Location> vListLocation;
+
     /** Logger pour la classe */
     private static final Log LOGGER = LogFactory.getLog(TopoManagerImpl.class);
 
     ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
-    DatasourceDao dao=(DatasourceDao)ctx.getBean("edao");
+    LocationDao dao=(LocationDao)ctx.getBean("locationdao");
 
     public LocationManagerImpl() {
 
@@ -35,6 +40,14 @@ public class LocationManagerImpl {
         int status=dao.saveLocation(new Location(this.dateDeb, this.dateFin, this.idUtilisateur,this.idTopo));
         System.out.println(status);
 
+    }
+
+    public List ListeLocation() {
+
+        vListLocation = new ArrayList<>() ;
+        vListLocation=dao.getlistLocation();
+
+        return vListLocation;
     }
 
 

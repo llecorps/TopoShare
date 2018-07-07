@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Created by esspressoh on 19.06.18.
@@ -38,17 +37,10 @@ public class UtilisateurManagerImpl {
 
     }
 
-
     public List ListeUtilisateur() {
 
         vListUtilisateur = new ArrayList<>() ;
         vListUtilisateur=utilisateurdao.getlistUtilisateur();
-
-        ListIterator listIterator = vListUtilisateur.listIterator();
-        while(listIterator.hasNext()) {
-            System.out.println("Liste U="+listIterator.next());
-        }
-
 
         return vListUtilisateur;
     }
