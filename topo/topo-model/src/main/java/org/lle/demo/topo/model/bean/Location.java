@@ -18,6 +18,13 @@ public class Location {
     public Location(int id) {
     }
 
+    public Location(String datedeb, String datefin, Integer idUtilisateur, Integer idTopo ){
+        this.datedeb = datedeb;
+        this.datefin = datefin;
+        this.idUtilisateur = idUtilisateur;
+        this.idTopo = idTopo;
+    }
+
     public static Integer getId() {
         return id;
     }

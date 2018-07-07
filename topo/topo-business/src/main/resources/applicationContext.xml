@@ -23,10 +23,13 @@
         <property name="dataSource" ref="ds"></property>
     </bean>
 
-    <bean id="edao" class="org.lle.demo.topo.consumer.dao.UtilisateurDao">
+    <bean id="utilisateurdao" class="org.lle.demo.topo.consumer.dao.UtilisateurDao">
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 
+    <bean id="topodao" class="org.lle.demo.topo.consumer.dao.TopoDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
 
 
 </beans>

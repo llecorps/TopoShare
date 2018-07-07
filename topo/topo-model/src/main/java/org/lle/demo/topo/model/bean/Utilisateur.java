@@ -48,4 +48,13 @@ public class Utilisateur {
     public void setPassword(String pPassword) {
         password = pPassword;
     }
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

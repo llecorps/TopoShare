@@ -16,6 +16,14 @@ public class Topo {
     }
 
     public Topo(int id) {
+        this.id = id;
+    }
+
+    public Topo(String libelle, String lieu, Integer idUtilisateur ) {
+
+        this.libelle = libelle;
+        this.lieu = lieu;
+        this.idUtilisateur = idUtilisateur;
     }
 
     public static Integer getId() {

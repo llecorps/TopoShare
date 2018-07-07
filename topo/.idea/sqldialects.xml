@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="mock:///UtilisateurDao.java" dialect="GenericSQL" />
-    <file url="mock:///UtilisateurDao.java" dialect="MySQL" />
-    <file url="mock:///UtilisateurDao.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/lle/demo/topo/consumer/dao/TopoDao.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/lle/demo/topo/consumer/dao/UtilisateurDao.java" dialect="PostgreSQL" />
   </component>
 </project>
