@@ -2,18 +2,21 @@ package org.lle.demo.topo.business.impl.manager;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.lle.demo.topo.business.contract.manager.TopoManager;
 import org.lle.demo.topo.consumer.dao.TopoDao;
 import org.lle.demo.topo.model.bean.Topo;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by esspressoh on 28.06.18.
  */
-public class TopoManagerImpl {
+@Named
+public class TopoManagerImpl implements TopoManager{
 
     private String libelle, lieu;
     private int utilisateur;

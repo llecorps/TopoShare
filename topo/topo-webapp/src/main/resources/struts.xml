@@ -11,5 +11,12 @@
         <action name="index">
             <result>/jsp/index.jsp</result>
         </action>
+        <!-- Action affichant le détail d'un utilisateur -->
+        <action name="utilisateur_list"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doList">
+            <result name="success">/jsp/utilisateur/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
     </package>
 </struts>

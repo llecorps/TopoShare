@@ -7,12 +7,14 @@ import org.lle.demo.topo.model.bean.Location;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by esspressoh on 01.07.18.
  */
+@Named
 public class LocationManagerImpl {
 
     private String dateDeb, dateFin;
