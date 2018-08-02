@@ -18,5 +18,53 @@
             <result name="success">/jsp/utilisateur/list.jsp</result>
             <result name="error">/jsp/error.jsp</result>
         </action>
+
+        <action name="utilisateur_detail"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doDetail">
+            <result name="success">/jsp/utilisateur/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <!-- Action affichant le détail d'un topo -->
+        <action name="topo_list"
+                class="org.lle.demo.topo.webapp.action.GestionTopoAction"
+                method="doList">
+            <result name="success">/jsp/topo/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="topo_detail"
+                class="org.lle.demo.topo.webapp.action.GestionTopoAction"
+                method="doDetail">
+            
+            <interceptor-ref name="store">
+                <param name="operationMode">RETRIEVE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+
+            <result name="success">/jsp/topo/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+
+        <action name="topo_new"
+                class="org.lle.demo.topo.webapp.action.GestionTopoAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+            <result name="input">/jsp/topo/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">topo_detail</param>
+                <param name="id">${topo.id}</param>
+            </result>
+        </action>
+
+
     </package>
 </struts>

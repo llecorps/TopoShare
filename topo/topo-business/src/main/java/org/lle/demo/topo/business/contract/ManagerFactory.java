@@ -12,5 +12,7 @@ public interface ManagerFactory {
 
     UtilisateurManager getUtilisateurManager();
 
-    TopoManager getTopoManager();
+    default TopoManager getTopoManager() {
+        return null;
+    }
 }

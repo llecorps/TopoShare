@@ -9,8 +9,14 @@
 </head>
 
 <body>
-<h2>Une erreur s'est produite</h2>
+<h2><s:text name="error.title" /></h2>
 
 <s:actionerror />
+
+<s:bean name="java.util.Date" var="now" />
+<s:text name="error.metadata">
+    <s:param value="now" />
+</s:text>
+
 </body>
 </html>

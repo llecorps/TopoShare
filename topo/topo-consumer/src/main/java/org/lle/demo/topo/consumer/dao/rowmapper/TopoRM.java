@@ -19,8 +19,8 @@ public class TopoRM implements RowMapper<Topo> {
         vTopo.setId(pRS.getInt("idtopo"));
         vTopo.setLibelle(pRS.getString("libelle"));
         vTopo.setLieu(pRS.getString("lieu"));
-        vTopo.setIdUtilisateur(pRS.getInt("utilisateur_idutilisateur"));
-        vTopo.setIdLocation(pRS.getInt("location_utilisateur_idutilisateur"));
+        //vTopo.setIdUtilisateur(pRS.getInt("utilisateur_idutilisateur"));
+        //vTopo.setIdLocation(pRS.getInt("location_utilisateur_idutilisateur"));
         return vTopo;
     }
 }

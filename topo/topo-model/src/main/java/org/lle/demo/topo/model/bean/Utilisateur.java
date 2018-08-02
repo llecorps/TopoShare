@@ -21,7 +21,7 @@ public class Utilisateur {
 
     }
 
-    public static Integer getId() {
+    public  Integer getId() {
         return id;
     }
     public void setId(Integer pId) {

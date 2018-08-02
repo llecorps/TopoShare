@@ -17,13 +17,17 @@ public class TopoDao {
 
     protected List<Topo> vListTopo = new ArrayList<>();
 
+    private Topo newTopo;
+
+
+
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     public int saveTopo(Topo vTopo){
 
-        String query="insert into topo (libelle,lieu,utilisateur_idutilisateur) values('"+vTopo.getLibelle()+"','"+vTopo.getLieu()+"','"+vTopo.getIdUtilisateur()+"')";
+        String query="insert into topo (libelle,lieu,utilisateur_idutilisateur) values('"+vTopo.getLibelle()+"','"+vTopo.getLieu()+"','"+vTopo.getResponsable().getId()+"')";
 
         return jdbcTemplate.update(query);
     }
@@ -39,5 +43,44 @@ public class TopoDao {
         return vListTopo;
 
     }
+
+    public Topo getTopo(Integer id){
+
+        /*
+        String vSQL="select * from topo where idtopo = Id";
+
+        RowMapper<Topo> vRowMapper = new TopoRM();
+
+        newTopo = jdbcTemplate.query(vSQL, vRowMapper);
+
+        return newTopo;
+        */
+        /*
+
+        SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("Id", 1);
+        return jdbcTemplate.queryForObject("select * from topo where idtopo = :Id", namedParameters, String.class);
+        */
+
+        /*
+
+        Topo vTopo = new Topo();
+        vTopo.setId(Id);
+
+        String SELECT_BY_ID = "select * from topo where idtopo = :id";
+
+        SqlParameterSource namedParameters = new BeanPropertySqlParameterSource(vTopo);
+         return jdbcTemplate.queryForObject(SELECT_BY_ID, namedParameters, Topo.class);
+
+       */
+
+        String query = "SELECT * FROM topo WHERE ID = ?";
+        Topo topos = jdbcTemplate.queryForObject(
+                query, new Object[] { id }, new TopoRM());
+
+        return topos;
+
+
+        }
+
 
 }

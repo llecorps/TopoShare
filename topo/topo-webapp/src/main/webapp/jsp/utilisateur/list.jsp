@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<h2>Liste des Utilisateurs</h2>
+<h2><s:text name="nav.listUser" /></h2>
 
 <ul>
     <s:iterator value="listUtilisateur">
@@ -24,5 +24,7 @@
         </li>
     </s:iterator>
 </ul>
+<h3><s:text name="nav.detailUser" /></h3>
+<s:a action="utilisateur_detail"><s:text name="nav.detailUser" /></s:a>
 </body>
 </html>

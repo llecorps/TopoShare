@@ -1,5 +1,7 @@
 package org.lle.demo.topo.model.bean;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by esspressoh on 18.06.18.
  */
@@ -8,8 +10,10 @@ public class Topo {
     private static Integer id;
     private String libelle;
     private String lieu;
-    private static Integer idUtilisateur;
+    //private static Integer idUtilisateur;
     private static Integer idLocation;
+    @NotNull
+    private Utilisateur responsable;
 
     public Topo(){
 
@@ -19,11 +23,11 @@ public class Topo {
         this.id = id;
     }
 
-    public Topo(String libelle, String lieu, Integer idUtilisateur ) {
+    public Topo(String libelle, String lieu, Utilisateur responsable ) {
 
         this.libelle = libelle;
         this.lieu = lieu;
-        this.idUtilisateur = idUtilisateur;
+        this.responsable = responsable;
     }
 
     public static Integer getId() {
@@ -33,12 +37,6 @@ public class Topo {
         id = pId;
     }
 
-    public static Integer getIdUtilisateur() {
-        return idUtilisateur;
-    }
-    public void setIdUtilisateur(Integer pIdUtilisateur) {
-        idUtilisateur = pIdUtilisateur;
-    }
 
     public static Integer getIdLocation() {
         return idLocation;
@@ -61,6 +59,13 @@ public class Topo {
         lieu = pLieu;
     }
 
+    public Utilisateur getResponsable() {
+        return responsable;
+    }
+    public void setResponsable(Utilisateur pResponsable) {
+        responsable = pResponsable;
+    }
+
     // ==================== Méthodes ====================
     @Override
     public String toString() {
@@ -70,7 +75,7 @@ public class Topo {
                 .append("libelle=").append(libelle)
                 .append(vSEP).append("lieu=\"").append(lieu).append('"')
                 .append(vSEP).append("location=").append(idLocation)
-                .append(vSEP).append("utilisateur=").append(idUtilisateur)
+                .append(vSEP).append("utilisateur=").append(responsable)
                 .append("}");
         return vStB.toString();
     }

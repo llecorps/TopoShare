@@ -2,6 +2,7 @@ package org.lle.demo.topo.webapp.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.exception.NotFoundException;
 import org.lle.demo.topo.webapp.WebappHelper;
 
 import java.util.List;
@@ -48,6 +49,19 @@ public class GestionUtilisateurAction extends ActionSupport {
         return ActionSupport.SUCCESS;
     }
 
+    public String doDetail() {
+        if (id == null) {
+            this.addActionError("Vous devez indiquer un id d'utilisateur");
+        } else {
+            try {
+                utilisateur = WebappHelper.getManagerFactory().getUtilisateurManager().getUtilisateur(id);
+            } catch (NotFoundException pE) {
+                this.addActionError("Utilisateur non trouvé. ID = " + id);
+            }
+        }
+
+        return (this.hasErrors()) ? ActionSupport.ERROR : ActionSupport.SUCCESS;
+    }
 
 
 }

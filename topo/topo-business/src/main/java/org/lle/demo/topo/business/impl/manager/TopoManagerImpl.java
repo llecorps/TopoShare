@@ -5,6 +5,8 @@ import org.apache.commons.logging.LogFactory;
 import org.lle.demo.topo.business.contract.manager.TopoManager;
 import org.lle.demo.topo.consumer.dao.TopoDao;
 import org.lle.demo.topo.model.bean.Topo;
+import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.exception.NotFoundException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,9 +21,11 @@ import java.util.List;
 public class TopoManagerImpl implements TopoManager{
 
     private String libelle, lieu;
-    private int utilisateur;
+    private Utilisateur utilisateur;
 
     protected List<Topo> vListTopo;
+
+    private Topo newTopo;
 
     /** Logger pour la classe */
     private static final Log LOGGER = LogFactory.getLog(TopoManagerImpl.class);
@@ -31,9 +35,17 @@ public class TopoManagerImpl implements TopoManager{
 
     public TopoManagerImpl() {
 
+
     }
 
-    public void ajoutTopo(String libelle, String lieu, int utilisateur)  {
+    public TopoManagerImpl(Topo newTopo) {
+
+        this.newTopo = newTopo;
+    }
+
+
+
+    public void ajoutTopo(String libelle, String lieu, Utilisateur utilisateur)  {
 
         this.libelle = libelle;
         this.lieu = lieu;
@@ -43,6 +55,7 @@ public class TopoManagerImpl implements TopoManager{
         System.out.println(status);
 
     }
+
     public List ListTopo() {
 
         vListTopo = new ArrayList<>() ;
@@ -50,4 +63,14 @@ public class TopoManagerImpl implements TopoManager{
 
         return vListTopo;
     }
+
+    @Override
+    public Topo detailTopo(Integer id) throws NotFoundException {
+
+        newTopo =topodao.getTopo(id);
+
+
+        return newTopo;
+    }
+
 }
