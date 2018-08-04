@@ -108,7 +108,7 @@ public class GestionTopoAction extends ActionSupport {
             // Récupération du responsable
             if (this.topo.getResponsable() == null
                     || this.topo.getResponsable().getId() == null) {
-                this.addFieldError("projet.responsable.id", "ne doit pas être vide");
+                this.addFieldError("topo.responsable.id", "ne doit pas être vide");
             } else {
                 try {
                     Utilisateur vResponsable

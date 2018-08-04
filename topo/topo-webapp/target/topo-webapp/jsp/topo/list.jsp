@@ -27,7 +27,7 @@
 </ul>
 <br>
 <h3><s:text name="nav.funcTopo" /></h3>
-<s:a action="topo_detail"><s:text name="nav.detailUser" /></s:a>
-<s:a action="topo_new"><s:text name="nav.newUser" /></s:a>
+<s:a action="topo_detail"><s:text name="nav.detailTopo" /></s:a>
+<s:a action="topo_new"><s:text name="nav.newTopo" /></s:a>
 </body>
 </html>
