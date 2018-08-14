@@ -12,6 +12,7 @@ public class Topo {
     private String lieu;
     //private static Integer idUtilisateur;
     private static Integer idLocation;
+
     @NotNull
     private Utilisateur responsable;
 

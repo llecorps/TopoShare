@@ -23,6 +23,8 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
 
     protected List<Utilisateur> vListUtilisateur;
 
+    private Utilisateur newUtilisateur;
+
     /** Logger pour la classe */
     private static final Log LOGGER = LogFactory.getLog(UtilisateurManagerImpl.class);
 
@@ -65,7 +67,10 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
      */
     @Override
     public Utilisateur getUtilisateur(Integer pId) throws NotFoundException {
-        return null;
+        newUtilisateur =utilisateurdao.getUtilisateur(pId);
+
+
+        return newUtilisateur;
     }
 
     /**

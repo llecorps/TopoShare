@@ -45,13 +45,12 @@ public class TopoManagerImpl implements TopoManager{
 
 
 
-    public void ajoutTopo(String libelle, String lieu, Utilisateur utilisateur)  {
+   // public void ajoutTopo(String libelle, String lieu, Utilisateur utilisateur)  {
 
-        this.libelle = libelle;
-        this.lieu = lieu;
-        this.utilisateur = utilisateur;
+    public void ajoutTopo(String libelle , String lieu,  Utilisateur utilisateur)  {
 
-        int status=topodao.saveTopo(new Topo(this.libelle, this.lieu, this.utilisateur));
+
+            int status=topodao.saveTopo(new Topo(libelle,  lieu, utilisateur));
         System.out.println(status);
 
     }
