@@ -46,15 +46,14 @@ public class TopoDao {
 
     public Topo getTopo(Integer id){
 
-        /*
-        String vSQL="select * from topo where idtopo = Id";
+
+        String vSQL="select * from topo where idtopo ="+id;
 
         RowMapper<Topo> vRowMapper = new TopoRM();
 
-        newTopo = jdbcTemplate.query(vSQL, vRowMapper);
 
-        return newTopo;
-        */
+        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
+
         /*
 
         SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("Id", 1);
@@ -73,11 +72,14 @@ public class TopoDao {
 
        */
 
-        String query = "SELECT * FROM topo WHERE ID = ?";
-        Topo topos = jdbcTemplate.queryForObject(
-                query, new Object[] { id }, new TopoRM());
+        //String query = "SELECT * FROM topo WHERE idtopo = ?";
+        //String query = "SELECT * FROM topo WHERE idtopo = 4";
+        //Topo topos = jdbcTemplate.queryForObject(
+          //      query, new Object[] { id }, new TopoRM());
 
-        return topos;
+       // String query="";
+
+        //return jdbcTemplate.update(query);
 
 
         }

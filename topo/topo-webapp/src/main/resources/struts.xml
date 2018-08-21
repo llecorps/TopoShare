@@ -38,12 +38,6 @@
                 class="org.lle.demo.topo.webapp.action.GestionTopoAction"
                 method="doDetail">
             
-            <interceptor-ref name="store">
-                <param name="operationMode">RETRIEVE</param>
-            </interceptor-ref>
-            <interceptor-ref name="defaultStack" />
-
-
             <result name="success">/jsp/topo/detail.jsp</result>
             <result name="error">/jsp/error.jsp</result>
         </action>

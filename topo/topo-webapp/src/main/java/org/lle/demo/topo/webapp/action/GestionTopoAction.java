@@ -18,7 +18,8 @@ public class GestionTopoAction extends ActionSupport {
 
     // ==================== Attributs ====================
     // ----- Paramètres en entrée
-    private static Integer id;
+    //private static Integer id;
+    private Integer id;
 
 
     //private String libelle;
@@ -28,17 +29,17 @@ public class GestionTopoAction extends ActionSupport {
 
     // ----- Eléments en sortie
     private List<Topo> listTopo;
-    private Topo topo;
+    public Topo topo;
 
     private List<Utilisateur> listUtilisateur;
 
     // ==================== Getters/Setters ====================
-    public static Integer getId() {
+    public  Integer getId() {
         return id;
     }
 
-    public static void setId(Integer id) {
-        GestionTopoAction.id = id;
+    public void setId(Integer pId) {
+        id = pId;
     }
 
     public List<Topo> getListTopo() {
@@ -78,12 +79,12 @@ public class GestionTopoAction extends ActionSupport {
      */
     public String doDetail() {
         if (id == null) {
-            this.addActionError(getText("error.project.missing.id"));
+            this.addActionError(getText("error.topo.missing.id"));
         } else {
             try {
                 topo = WebappHelper.getManagerFactory().getTopoManager().detailTopo(id);
             } catch (NotFoundException pE) {
-                this.addActionError(getText("error.project.notfound", Collections.singletonList(id)));
+                this.addActionError(getText("error.topo.notfound", Collections.singletonList(id)));
             }
         }
 

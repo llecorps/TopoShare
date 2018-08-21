@@ -9,14 +9,14 @@
 
 <body>
 
-<s:actionmessage />
 
-<h2><s:text name="nav.detailTopo"</h2>
+<h2><s:text name="nav.detailTopo" /></h2>
 
 <ul>
+
     <li>ID : <s:property value="topo.id" /></li>
     <li>Libelle : <s:property value="topo.libelle" /></li>
-    <li>Lieu : <s:date name="topo.lieu" /></li>
+    <li>Lieu : <s:property value="topo.lieu" /></li>
     <li>
         Owner :
         <s:a action="utilisateur_detail">

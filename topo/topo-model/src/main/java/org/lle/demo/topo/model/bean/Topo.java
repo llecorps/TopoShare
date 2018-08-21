@@ -7,17 +7,34 @@ import com.sun.istack.internal.NotNull;
  */
 public class Topo {
 
-    private static Integer id;
+    private Integer id;
     private String libelle;
     private String lieu;
-    //private static Integer idUtilisateur;
-    private static Integer idLocation;
+    private Integer idLocation;
+
+    public Integer getIdUtilisateur() {
+        return idUtilisateur;
+    }
+
+    public void setIdUtilisateur(Integer idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
+    }
+
+    private Integer idUtilisateur;
 
     @NotNull
     private Utilisateur responsable;
 
     public Topo(){
 
+    }
+
+    public Topo(String libelle, String lieu, int idUtilisateur, int idLocation) {
+
+        this.libelle = libelle;
+        this.lieu = lieu;
+        this.idUtilisateur = idUtilisateur;
+        this.idLocation = idLocation;
     }
 
     public Topo(int id) {
@@ -31,15 +48,15 @@ public class Topo {
         this.responsable = responsable;
     }
 
-    public static Integer getId() {
+    public Integer getId() {
         return id;
     }
     public void setId(Integer pId) {
-        id = pId;
+        this.id = pId;
     }
 
 
-    public static Integer getIdLocation() {
+    public Integer getIdLocation() {
         return idLocation;
     }
     public void setIdLocation(Integer pIdLocation) {
