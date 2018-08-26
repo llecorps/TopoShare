@@ -55,7 +55,7 @@ public class TopoManagerImpl implements TopoManager{
 
     }
 
-    public List ListTopo() {
+    public List<Topo> ListTopo() {
 
         vListTopo = new ArrayList<>() ;
         vListTopo=topodao.getlistTopo();

@@ -12,6 +12,8 @@
         <s:a action="utilisateur_list"><s:text name="nav.listUser" /></s:a>
             <br>
         <s:a action="topo_list"><s:text name="nav.listTopo" /></s:a>
+            <br>
+    <s:a action="location_list"><s:text name="nav.listLocation" /></s:a>
 
     <footer>
         <s:a action="index">

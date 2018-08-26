@@ -18,14 +18,8 @@ public class GestionTopoAction extends ActionSupport {
 
     // ==================== Attributs ====================
     // ----- Paramètres en entrée
-    //private static Integer id;
+
     private Integer id;
-
-
-    //private String libelle;
-    //private String lieu;
-    //private static Integer idUtilisateur;
-    //private static Integer idLocation;
 
     // ----- Eléments en sortie
     private List<Topo> listTopo;
@@ -46,9 +40,9 @@ public class GestionTopoAction extends ActionSupport {
         return listTopo;
     }
 
-    public void setListTopo(List<Topo> listTopo) {
-        this.listTopo = listTopo;
-    }
+    //public void setListTopo(List<Topo> listTopo) {
+      //  this.listTopo = listTopo;
+    //}
 
     public Topo getTopo() {
         return topo;

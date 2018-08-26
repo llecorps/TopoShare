@@ -20,13 +20,13 @@ public class LocationDao {
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-
+/*
     public int saveLocation(Location vLocation){
 
         String query="insert into location (datedeb, datefin, utilisateur_idutilisateur, topo_idtopo) values('"+vLocation.getDatedeb()+"','"+vLocation.getDatefin()+"','"+vLocation.getIdUtilisateur()+"','"+vLocation.getIdTopo()+"')";
 
         return jdbcTemplate.update(query);
-    }
+    }*/
 
     public List<Location> getlistLocation() {
 
@@ -39,5 +39,26 @@ public class LocationDao {
         return vListLocation;
 
     }
+
+    public Location getLocation(Integer id){
+
+
+        String vSQL="select * from location where idlocation ="+id;
+
+        RowMapper<Location> vRowMapper = new LocationRM();
+
+
+        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
+
+    }
+
+    public int saveLocation(Location vLocation){
+
+        String query="insert into topo (datedeb,datefin,utilisateur_idutilisateur, topo_idtopo) values('"+vLocation.getDatedeb()+"','"+vLocation.getDatefin()+"','"+vLocation.getResponsable().getId()+"','"+vLocation.getTopo()+"')";
+
+
+        return jdbcTemplate.update(query);
+    }
+
 
 }

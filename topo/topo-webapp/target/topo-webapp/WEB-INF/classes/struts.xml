@@ -59,6 +59,37 @@
             </result>
         </action>
 
+        <!-- Action affichant détail location -->
+        <action name="location_list"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doList">
+            <result name="success">/jsp/location/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="location_detail"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doDetail">
+
+            <result name="success">/jsp/location/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="location_new"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+            <result name="input">/jsp/location/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">location_detail</param>
+                <param name="id">${location.id}</param>
+            </result>
+        </action>
 
     </package>
 </struts>

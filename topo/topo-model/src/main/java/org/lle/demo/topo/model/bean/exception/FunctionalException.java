@@ -7,7 +7,13 @@ package org.lle.demo.topo.model.bean.exception;
  */
 public class FunctionalException extends Exception {
 
-    /**
+    public FunctionalException()  {
+
+    }
+
+
+
+        /**
      * Constructeur.
      *
      * @param pMessage -

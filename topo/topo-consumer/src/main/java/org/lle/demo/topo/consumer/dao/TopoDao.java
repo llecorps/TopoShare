@@ -54,34 +54,6 @@ public class TopoDao {
 
         return jdbcTemplate.queryForObject(vSQL, vRowMapper);
 
-        /*
-
-        SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("Id", 1);
-        return jdbcTemplate.queryForObject("select * from topo where idtopo = :Id", namedParameters, String.class);
-        */
-
-        /*
-
-        Topo vTopo = new Topo();
-        vTopo.setId(Id);
-
-        String SELECT_BY_ID = "select * from topo where idtopo = :id";
-
-        SqlParameterSource namedParameters = new BeanPropertySqlParameterSource(vTopo);
-         return jdbcTemplate.queryForObject(SELECT_BY_ID, namedParameters, Topo.class);
-
-       */
-
-        //String query = "SELECT * FROM topo WHERE idtopo = ?";
-        //String query = "SELECT * FROM topo WHERE idtopo = 4";
-        //Topo topos = jdbcTemplate.queryForObject(
-          //      query, new Object[] { id }, new TopoRM());
-
-       // String query="";
-
-        //return jdbcTemplate.update(query);
-
-
         }
 
 
