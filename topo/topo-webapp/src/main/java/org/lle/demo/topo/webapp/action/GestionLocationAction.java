@@ -4,7 +4,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.lle.demo.topo.model.bean.Location;
 import org.lle.demo.topo.model.bean.Topo;
 import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.exception.FunctionalException;
 import org.lle.demo.topo.model.bean.exception.NotFoundException;
+import org.lle.demo.topo.model.bean.exception.TechnicalException;
 import org.lle.demo.topo.webapp.WebappHelper;
 
 import java.util.Collections;
@@ -33,17 +35,15 @@ public class GestionLocationAction extends ActionSupport {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+
+    public void setId(Integer pId) {
+        id = pId;
     }
 
     public List<Location> getListLocation() {
         return listLocation;
     }
 
-    public void setListLocation(List<Location> listLocation) {
-        this.listLocation = listLocation;
-    }
 
     public Location getLocation() {
         return location;
@@ -127,13 +127,20 @@ public class GestionLocationAction extends ActionSupport {
             // Si pas d'erreur, ajout du projet...
             if (!this.hasErrors()) {
 
-                WebappHelper.getManagerFactory().getLocationManager()
-                        .ajoutLocation(this.location.getDatedeb(),
-                                this.location.getDatefin(), this.location.getResponsable(),
-                                this.location.getTopo());
+                try {
+
+                WebappHelper.getManagerFactory().getLocationManager().ajoutLocation(this.location.getDatedeb(), this.location.getDatefin(), this.location.getResponsable(), this.location.getTopo());
                 // Si ajout avec succès -> Result "success"
                 vResult = ActionSupport.SUCCESS;
-                this.addActionMessage("Projet ajouté avec succès");
+                this.addActionMessage("Location ajoutée avec succès");
+
+            } catch (FunctionalException pEx) {
+                    this.addActionError(pEx.getMessage());
+            } catch (TechnicalException pEx) {
+                    // Sur erreur technique on part sur le result "error"
+                    this.addActionError(pEx.getMessage());
+                    vResult = ActionSupport.ERROR;
+                }
 
             }
         }
