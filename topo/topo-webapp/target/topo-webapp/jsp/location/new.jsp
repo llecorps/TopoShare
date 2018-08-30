@@ -20,6 +20,10 @@
               list="listTopo" listKey="id" listValue="libelle"
               emptyOption="true"
               requiredLabel="true"/>
+    <s:select name="location.responsable.id" label="Utilisateur"
+              list="listUtilisateur" listKey="id" listValue="username"
+              emptyOption="true"
+              requiredLabel="true"/>
 
 
 

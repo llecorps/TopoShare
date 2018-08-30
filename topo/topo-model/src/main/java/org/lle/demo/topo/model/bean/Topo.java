@@ -37,8 +37,8 @@ public class Topo {
         this.idLocation = idLocation;
     }
 
-    public Topo(int id) {
-        this.id = id;
+    public Topo(Integer pId) {
+        id = pId;
     }
 
     public Topo(String libelle, String lieu, Utilisateur responsable ) {

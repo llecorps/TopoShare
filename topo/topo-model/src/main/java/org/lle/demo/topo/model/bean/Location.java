@@ -21,7 +21,8 @@ public class Location {
 
     }
 
-    public Location(int id) {
+    public Location(Integer pId) {
+        id = pId;
     }
 
     public Location(String datedeb, String datefin, Integer idUtilisateur, Integer idTopo ){

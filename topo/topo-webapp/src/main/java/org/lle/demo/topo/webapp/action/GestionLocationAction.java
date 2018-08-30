@@ -107,16 +107,21 @@ public class GestionLocationAction extends ActionSupport {
 
         // ===== Validation de l'ajout de projet (projet != null)
         if (this.location != null) {
-            // Récupération du responsable
-            if (this.location.getResponsable() == null
-                    || this.location.getResponsable().getId() == null) {
-                this.addFieldError("location.responsable.id", "ne doit pas être vide");
+            // Récupération du Topo
+            if (this.location.getTopo() == null
+                    || this.location.getTopo().getId() == null) {
+                this.addFieldError("location.topo.id", "ne doit pas être vide");
             } else {
                 try {
                     Topo vTopo
                             = WebappHelper.getManagerFactory().getTopoManager()
                             .detailTopo(this.location.getTopo().getId());
                     this.location.setTopo(vTopo);
+                    Utilisateur vResponsable
+                            = WebappHelper.getManagerFactory().getUtilisateurManager()
+                            .getUtilisateur(this.location.getResponsable().getId());
+                    this.location.setResponsable(vResponsable);
+
                 } catch (NotFoundException pEx) {
                     this.addFieldError("location.topo.id", pEx.getMessage());
                 }
@@ -148,6 +153,7 @@ public class GestionLocationAction extends ActionSupport {
         // Si on doit aller sur le formulaire de saisie, il faut ajouter les info nécessaires
         if (vResult.equals(ActionSupport.INPUT)) {
             this.listTopo = WebappHelper.getManagerFactory().getTopoManager().ListTopo();
+            this.listUtilisateur = WebappHelper.getManagerFactory().getUtilisateurManager().getListUtilisateur();
         }
 
         return vResult;

@@ -28,7 +28,7 @@
     <li>
         Topo :
         <s:a action="topo_detail">
-            <s:param name="id" value="location.topo_idtopo" />
+            <s:param name="id" value="location.topo.id" />
             <s:property value="location.topo.libelle"/>
             <s:property value="location.topo.lieu"/>
         </s:a>

@@ -54,7 +54,7 @@ public class LocationDao {
 
     public int saveLocation(Location vLocation){
 
-        String query="insert into topo (datedeb,datefin,utilisateur_idutilisateur, topo_idtopo) values('"+vLocation.getDatedeb()+"','"+vLocation.getDatefin()+"','"+vLocation.getResponsable().getId()+"','"+vLocation.getTopo()+"')";
+        String query="insert into location (datedeb,datefin,utilisateur_idutilisateur, topo_idtopo) values('"+vLocation.getDatedeb()+"','"+vLocation.getDatefin()+"','"+vLocation.getResponsable().getId()+"','"+vLocation.getTopo().getId()+"')";
 
 
         return jdbcTemplate.update(query);
