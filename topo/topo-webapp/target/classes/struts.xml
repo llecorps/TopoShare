@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="default" extends="struts-default">
+        <!-- Action par défaut -->
+        <default-action-ref name="index" />
+
+        <!-- Action "index" -->
+        <action name="index">
+            <result>/jsp/index.jsp</result>
+        </action>
+        <!-- Action affichant le détail d'un utilisateur -->
+        <action name="utilisateur_list"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doList">
+            <result name="success">/jsp/utilisateur/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="utilisateur_detail"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doDetail">
+            <result name="success">/jsp/utilisateur/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <!-- Action affichant le détail d'un topo -->
+        <action name="topo_list"
+                class="org.lle.demo.topo.webapp.action.GestionTopoAction"
+                method="doList">
+            <result name="success">/jsp/topo/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="topo_detail"
+                class="org.lle.demo.topo.webapp.action.GestionTopoAction"
+                method="doDetail">
+            
+            <result name="success">/jsp/topo/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+
+        <action name="topo_new"
+                class="org.lle.demo.topo.webapp.action.GestionTopoAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+            <result name="input">/jsp/topo/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">topo_detail</param>
+                <param name="id">${topo.id}</param>
+            </result>
+        </action>
+
+        <!-- Action affichant détail location -->
+        <action name="location_list"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doList">
+            <result name="success">/jsp/location/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="location_detail"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doDetail">
+
+            <result name="success">/jsp/location/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="location_new"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+            <result name="input">/jsp/location/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">location_detail</param>
+                <param name="id">${location.id}</param>
+            </result>
+        </action>
+
+    </package>
+</struts>

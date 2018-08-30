@@ -1,21 +1,28 @@
 package org.lle.demo.topo.model.bean;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by esspressoh on 18.06.18.
  */
 public class Location {
 
-    private static Integer id;
+    private Integer id;
     private String datedeb;
     private String datefin;
-    private static Integer idUtilisateur;
-    private static Integer idTopo;
+    private Integer idUtilisateur;
+    private Integer idTopo;
+    @NotNull
+    private Utilisateur responsable;
+    @NotNull
+    private Topo topo;
 
     public Location(){
 
     }
 
-    public Location(int id) {
+    public Location(Integer pId) {
+        id = pId;
     }
 
     public Location(String datedeb, String datefin, Integer idUtilisateur, Integer idTopo ){
@@ -25,21 +32,43 @@ public class Location {
         this.idTopo = idTopo;
     }
 
-    public static Integer getId() {
+    public Location(String datedeb, String datefin, Utilisateur responsable, Topo topo ) {
+
+        this.datedeb = datedeb;
+        this.datefin = datefin;
+        this.responsable = responsable;
+        this.topo = topo;
+    }
+
+    public Topo getTopo() {
+        return topo;
+    }
+    public void setTopo(Topo pTopo) {
+        topo = pTopo;
+    }
+
+    public Utilisateur getResponsable() {
+        return responsable;
+    }
+    public void setResponsable(Utilisateur pResponsable) {
+        responsable = pResponsable;
+    }
+
+    public  Integer getId() {
         return id;
     }
     public void setId(Integer pId) {
         id = pId;
     }
 
-    public static Integer getIdUtilisateur() {
+    public  Integer getIdUtilisateur() {
         return idUtilisateur;
     }
     public void setIdUtilisateur(Integer pIdUtilisateur) {
         idUtilisateur = pIdUtilisateur;
     }
 
-    public static Integer getIdTopo() {
+    public  Integer getIdTopo() {
         return idTopo;
     }
     public void setIdTopo(Integer pIdTopo) {
@@ -68,8 +97,8 @@ public class Location {
         vStB.append(" {")
                 .append("Date de début=").append(datedeb)
                 .append(vSEP).append("Date de fin=").append(datefin)
-                .append(vSEP).append("Utilisateur=").append(idUtilisateur)
-                .append(vSEP).append("Topo=").append(idTopo)
+                .append(vSEP).append("Utilisateur=").append(responsable)
+                .append(vSEP).append("Topo=").append(topo)
                 .append("}");
         return vStB.toString();
     }

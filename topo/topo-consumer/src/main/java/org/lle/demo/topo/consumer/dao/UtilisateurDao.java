@@ -41,4 +41,17 @@ public class UtilisateurDao {
         return vListUtilisateur;
 
     }
+
+    public Utilisateur getUtilisateur(int id){
+        String mike = "mike";
+        String password = "password";
+        String lemail = "mike@mail.com";
+        Utilisateur pUtilisateur = new Utilisateur();
+        pUtilisateur.setId(4);
+        pUtilisateur.setUsername(mike);
+        pUtilisateur.setPassword(password);
+        pUtilisateur.setEmail(lemail);
+
+        return pUtilisateur;
+    }
 }
