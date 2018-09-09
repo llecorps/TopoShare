@@ -8,6 +8,8 @@
 </head>
 
 <body>
+<s:actionerror/>
+<s:actionmessage />
 
 
 <h2><s:text name="nav.detailTopo" /></h2>
@@ -22,7 +24,7 @@
         <s:a action="utilisateur_detail">
             <s:param name="id" value="topo.utilisateur_idutilisateur" />
             <s:property value="topo.utilisateur.username"/>
-            <s:property value="projet.utilisateur.email"/>
+            <s:property value="topo.utilisateur.email"/>
         </s:a>
     </li>
 

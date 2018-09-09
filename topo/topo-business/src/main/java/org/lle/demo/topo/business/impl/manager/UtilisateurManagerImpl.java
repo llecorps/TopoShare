@@ -5,7 +5,9 @@ import org.apache.commons.logging.LogFactory;
 import org.lle.demo.topo.business.contract.manager.UtilisateurManager;
 import org.lle.demo.topo.consumer.dao.UtilisateurDao;
 import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.exception.FunctionalException;
 import org.lle.demo.topo.model.bean.exception.NotFoundException;
+import org.lle.demo.topo.model.bean.exception.TechnicalException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -32,6 +34,16 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
     UtilisateurDao utilisateurdao=(UtilisateurDao)ctx.getBean("utilisateurdao");
 
     public UtilisateurManagerImpl()  {}
+/*
+    public UtilisateurManagerImpl(Utilisateur newUtilisateur)  {
+        this.newUtilisateur = newUtilisateur;
+    }
+
+    public UtilisateurManagerImpl(String username, String email, String password)  {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
     public void ajoutUtilisateur(String username, String email, String password)  {
         this.username = username;
@@ -42,7 +54,7 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
     System.out.println(status);
 
     }
-
+*/
 
 
     /**
@@ -68,8 +80,12 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
     @Override
     public Utilisateur getUtilisateur(Integer pId) throws NotFoundException {
         newUtilisateur =utilisateurdao.getUtilisateur(pId);
+        return newUtilisateur;
+    }
 
-
+    @Override
+    public Utilisateur getUtilisateur(String user) throws NotFoundException {
+        newUtilisateur =utilisateurdao.getUtilisateur(user);
         return newUtilisateur;
     }
 
@@ -82,7 +98,22 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
      * @throws NotFoundException Si l'Utilisateur n'est pas trouvé
      */
     @Override
-    public Utilisateur getUtilisateur(String pLogin, String pPassword) throws NotFoundException {
-        return null;
+    public Utilisateur getUtilisateur(String pLogin, String pPassword) {
+        newUtilisateur =utilisateurdao.getUtilisateur(pLogin, pPassword );
+        return newUtilisateur;
     }
+
+    @Override
+   public void addUser(String username, String email, String password) throws FunctionalException, TechnicalException {
+
+
+
+        int status=utilisateurdao.saveUtilisateur(new Utilisateur(username, email, password));
+        System.out.println(status);
+
+
+
+    }
+
+
 }

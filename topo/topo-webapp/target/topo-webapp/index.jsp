@@ -10,18 +10,39 @@
 
     <link rel="stylesheet" type="text/css" href="WEB-INF/css/styles.css" />
     <title>Topo</title>
+    <style type="text/css">
+        body{
+            position: relative; /* required */
+            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
+            background: url('assets/img/fond.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
 <%@ include file="WEB-INF/menu.jsp" %>
+<s:actionerror/>
+<s:actionmessage />
+
+<div class="connecting-line" align="center">
+<s:a action="login"><s:text name="nav.login" /></s:a>
+</div>
+  <div class="container">
+
     <h2><s:text name="home.welcome" /></h2>
+
+
         <s:a action="utilisateur_list"><s:text name="nav.listUser" /></s:a>
             <br>
         <s:a action="topo_list"><s:text name="nav.listTopo" /></s:a>
             <br>
     <s:a action="location_list"><s:text name="nav.listLocation" /></s:a>
 
-    <footer>
+    <footer >
         <s:a action="index">
             <s:param name="request_locale">en</s:param>
             [English]
@@ -31,6 +52,7 @@
             [Français]
         </s:a>
     </footer>
+</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Javascript de Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
