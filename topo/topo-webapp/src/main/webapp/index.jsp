@@ -10,17 +10,8 @@
 
     <link rel="stylesheet" type="text/css" href="WEB-INF/css/styles.css" />
     <title>Topo</title>
-    <style type="text/css">
-        body{
-            position: relative; /* required */
-            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
-            background: url('assets/img/fond.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-        }
-    </style>
+
+    <%@ include file="jsp/_include/head.jsp" %>
 </head>
 
 <body>
@@ -28,10 +19,13 @@
 <s:actionerror/>
 <s:actionmessage />
 
-<div class="connecting-line" align="center">
-<s:a action="login"><s:text name="nav.login" /></s:a>
-</div>
   <div class="container">
+      <%@ include file="jsp/_include/header.jsp" %>
+      <div class="connecting-line" align="center">
+          <!--
+          <s:a action="login"><s:text name="nav.login" /></s:a>
+          -->
+      </div>
 
     <h2><s:text name="home.welcome" /></h2>
 

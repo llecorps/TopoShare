@@ -117,7 +117,9 @@
             <result name="error">/jsp/error.jsp</result>
         </action>
         <action name="logout" class="org.lle.demo.topo.webapp.action.LoginAction" method="doLogout">
-            <result type="redirectAction">/jsp/login.jsp</result>
+            <result type="redirectAction">
+                <param name="actionName">index</param>
+            </result>
         </action>
 
     </package>

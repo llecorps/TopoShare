@@ -27,9 +27,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="accueil">Home</a></a></li>
-                    <li> <a href="Utilisateur">Utilisateur</a> </li>
-                    <li> <a href="Topo">Topo</a> </li>
+                    <li class="active"><a href="index.jsp">Home</a></li>
+                    <li> <a href="jsp/utilisateur/list.jsp">Utilisateur</a> </li>
+                    <li> <a href="jsp/topo/list.jsp">Topo</a> </li>
                 </ul>
             </div>
         </div>

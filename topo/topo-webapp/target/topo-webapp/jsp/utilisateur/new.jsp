@@ -10,6 +10,10 @@
 <body>
 <s:actionerror/>
 <s:actionmessage/>
+<%@ include file="../../WEB-INF/menu.jsp" %>
+
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 
 <h2>User Add</h2>
 
@@ -23,5 +27,6 @@
     <s:submit value="OK"/>
 
 </s:form>
+    </div>
 </body>
 </html>

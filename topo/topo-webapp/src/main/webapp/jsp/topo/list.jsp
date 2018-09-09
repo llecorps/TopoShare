@@ -22,6 +22,8 @@
 <body>
 <%@ include file="../../WEB-INF/menu.jsp" %>
 <div class="container">
+    <%@ include file="../_include/header.jsp" %>
+
 <h2><s:text name="nav.listTopo" /></h2>
 
 <ul>
