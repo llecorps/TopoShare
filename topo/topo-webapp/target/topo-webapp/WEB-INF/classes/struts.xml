@@ -9,13 +9,37 @@
 
         <!-- Action "index" -->
         <action name="index">
-            <result>/jsp/index.jsp</result>
+            <result>index.jsp</result>
         </action>
         <!-- Action affichant le détail d'un utilisateur -->
+        <action name="utilisateur_new"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+            <result name="input">/jsp/utilisateur/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">login</param>
+
+            </result>
+        </action>
+
+
         <action name="utilisateur_list"
                 class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
                 method="doList">
             <result name="success">/jsp/utilisateur/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="utilisateur_last"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doLast">
+            <result name="success">/jsp/utilisateur/last.jsp</result>
             <result name="error">/jsp/error.jsp</result>
         </action>
 
@@ -55,7 +79,7 @@
             <result name="input">/jsp/topo/new.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">topo_detail</param>
-                <param name="id">${topo.id}</param>
+                <param name="id">${topo.responsable.id}</param>
             </result>
         </action>
 
@@ -64,6 +88,13 @@
                 class="org.lle.demo.topo.webapp.action.GestionLocationAction"
                 method="doList">
             <result name="success">/jsp/location/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="location_last"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doLast">
+            <result name="success">/jsp/location/last.jsp</result>
             <result name="error">/jsp/error.jsp</result>
         </action>
 
@@ -87,7 +118,21 @@
             <result name="input">/jsp/location/new.jsp</result>
             <result name="success" type="redirectAction">
                 <param name="actionName">location_detail</param>
-                <param name="id">${location.id}</param>
+                <param name="id">${location.topo.id}</param>
+            </result>
+        </action>
+
+        <!-- Actions Login/Logout -->
+        <action name="login" class="org.lle.demo.topo.webapp.action.LoginAction" method="doLogin">
+            <result name="input">/jsp/login.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+                </result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+        <action name="logout" class="org.lle.demo.topo.webapp.action.LoginAction" method="doLogout">
+            <result type="redirectAction">
+                <param name="actionName">index</param>
             </result>
         </action>
 

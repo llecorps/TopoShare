@@ -2,7 +2,9 @@ package org.lle.demo.topo.business.contract.manager;
 
 
 import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.exception.FunctionalException;
 import org.lle.demo.topo.model.bean.exception.NotFoundException;
+import org.lle.demo.topo.model.bean.exception.TechnicalException;
 
 import java.util.List;
 
@@ -28,6 +30,8 @@ public interface UtilisateurManager {
      */
     Utilisateur getUtilisateur(Integer pId) throws NotFoundException;
 
+    Utilisateur getUtilisateur(String user) throws NotFoundException;
+
 
     /**
      * Renvoie l'{@link Utilisateur} correspondant au couple login / mot de passe
@@ -37,5 +41,9 @@ public interface UtilisateurManager {
      * @return Le {@link Utilisateur}
      * @throws NotFoundException Si l'Utilisateur n'est pas trouvé
      */
-    Utilisateur getUtilisateur(String pLogin, String pPassword) throws NotFoundException;
+    Utilisateur getUtilisateur(String pLogin, String pPassword) ;
+
+   void addUser(String username, String email, String password) throws FunctionalException, TechnicalException;
+
+
 }

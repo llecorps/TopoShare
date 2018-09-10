@@ -1,23 +1,37 @@
 package org.lle.demo.topo.model.bean;
 
+import com.sun.istack.internal.NotNull;
+
 public class Utilisateur {
 
-    private static Integer id;
+    private  Integer id;
     private String username;
     private String email;
     private String password;
+
+    @NotNull
+    private Utilisateur responsable;
 
     public Utilisateur(){
 
     }
 
-    public Utilisateur(int id) {
+    public Utilisateur(int pId) {
+        id = pId;
     }
+/*
+    public Utilisateur(String user, String mail, String password , Utilisateur responsable) {
+        this.username = user;
+        this.email = mail;
+        this.password = password;
+        this.responsable = responsable;
 
-    public Utilisateur(String user, String mail, String password) {
-        setUsername(user);
-        setEmail(mail);
-        setPassword(password);
+    }
+*/
+    public Utilisateur(String username, String email, String password) {
+       this.username = username;
+       this.email = email;
+       this.password = password;
 
     }
 
@@ -47,6 +61,13 @@ public class Utilisateur {
     }
     public void setPassword(String pPassword) {
         password = pPassword;
+    }
+
+    public Utilisateur getResponsable() {
+        return responsable;
+    }
+    public void setResponsable(Utilisateur pResponsable) {
+        responsable = pResponsable;
     }
 
     @Override

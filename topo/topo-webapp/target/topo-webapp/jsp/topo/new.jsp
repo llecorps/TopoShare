@@ -21,7 +21,6 @@
               emptyOption="true"
               requiredLabel="true"/>
 
-    <!--s:checkbox name="projet.cloture" label="Cloturé"/-->
 
     <s:submit value="OK"/>
 </s:form>
