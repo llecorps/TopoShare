@@ -5,10 +5,24 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ticket</title>
+    <title>User</title>
+    <style type="text/css">
+        body{
+            position: relative; /* required */
+            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
+            background: url('assets/img/fond.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
+<%@ include file="../../WEB-INF/menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 <h2><s:text name="nav.listUser" /></h2>
 
 
@@ -28,5 +42,6 @@
 </ul>
 <h3><s:text name="nav.funcUser" /></h3>
 <s:a action="utilisateur_new"><s:text name="nav.newUser" /></s:a>
+</div>
 </body>
 </html>

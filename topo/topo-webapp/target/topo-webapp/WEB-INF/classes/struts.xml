@@ -36,6 +36,13 @@
             <result name="error">/jsp/error.jsp</result>
         </action>
 
+        <action name="utilisateur_last"
+                class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
+                method="doLast">
+            <result name="success">/jsp/utilisateur/last.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
         <action name="utilisateur_detail"
                 class="org.lle.demo.topo.webapp.action.GestionUtilisateurAction"
                 method="doDetail">
@@ -81,6 +88,13 @@
                 class="org.lle.demo.topo.webapp.action.GestionLocationAction"
                 method="doList">
             <result name="success">/jsp/location/list.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="location_last"
+                class="org.lle.demo.topo.webapp.action.GestionLocationAction"
+                method="doLast">
+            <result name="success">/jsp/location/last.jsp</result>
             <result name="error">/jsp/error.jsp</result>
         </action>
 

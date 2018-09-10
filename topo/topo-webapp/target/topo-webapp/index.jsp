@@ -30,11 +30,11 @@
     <h2><s:text name="home.welcome" /></h2>
 
 
-        <s:a action="utilisateur_list"><s:text name="nav.listUser" /></s:a>
+        <s:a action="utilisateur_last"><s:text name="nav.lastUser" /></s:a>
             <br>
-        <s:a action="topo_list"><s:text name="nav.listTopo" /></s:a>
+        <s:a action="comment_last"><s:text name="nav.lastComment" /></s:a>
             <br>
-    <s:a action="location_list"><s:text name="nav.listLocation" /></s:a>
+    <s:a action="location_last"><s:text name="nav.lastLocation" /></s:a>
 
     <footer >
         <s:a action="index">

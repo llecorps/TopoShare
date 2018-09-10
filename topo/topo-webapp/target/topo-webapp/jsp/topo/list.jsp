@@ -16,8 +16,8 @@
             background-size: cover;
             -o-background-size: cover;
         }
+    </style>
 </head>
-            </style>
 
 <body>
 <%@ include file="../../WEB-INF/menu.jsp" %>
