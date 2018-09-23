@@ -14,7 +14,7 @@ import java.util.List;
 public interface TopoManager {
 
 
-    public List ListTopo();
+     List<Topo> ListTopo();
 
     /**
      * Renvoie le topo demandé

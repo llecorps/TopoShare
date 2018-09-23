@@ -1,5 +1,7 @@
 package org.lle.demo.topo.model.bean;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by esspressoh on 18.06.18.
  */
@@ -8,7 +10,14 @@ public class Commentaire {
     private static Integer id;
     private String description;
     private static Integer idUtilisateur;
-    private static Integer idLocation;
+    private static Integer idTopo;
+
+
+    @NotNull
+    private Utilisateur responsable;
+
+    @NotNull
+    private Topo topoguide;
 
     public Commentaire(){
 
@@ -16,6 +25,30 @@ public class Commentaire {
 
     public Commentaire(int id) {
     }
+
+
+    public Commentaire(String description, Topo topoguide, Utilisateur responsable) {
+        this.description = description;
+        this.topoguide = topoguide;
+        this.responsable = responsable;
+    }
+
+    public Utilisateur getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Utilisateur responsable) {
+        this.responsable = responsable;
+    }
+
+    public Topo getTopoguide() {
+        return topoguide;
+    }
+
+    public void setTopoguide(Topo topoguide) {
+        this.topoguide = topoguide;
+    }
+
 
     public static Integer getId() {
         return id;
@@ -31,11 +64,11 @@ public class Commentaire {
         idUtilisateur = pIdUtilisateur;
     }
 
-    public static Integer getIdLocation() {
-        return idLocation;
+    public static Integer getIdTopo() {
+        return idTopo;
     }
-    public void setIdLocation(Integer pIdLocation) {
-        idLocation = pIdLocation;
+    public void setIdTopo(Integer pIdTopo) {
+        idTopo = pIdTopo;
     }
 
     public String getDescription() {
@@ -53,8 +86,8 @@ public class Commentaire {
         final String vSEP = ", ";
         vStB.append(" {")
                 .append("Description=").append(description)
-                .append(vSEP).append("location=").append(idLocation)
-                .append(vSEP).append("utilisateur=").append(idUtilisateur)
+                .append(vSEP).append("topoguide=").append(topoguide)
+                .append(vSEP).append("responsable=").append(responsable)
                 .append("}");
         return vStB.toString();
     }

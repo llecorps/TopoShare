@@ -20,13 +20,7 @@ public class LocationDao {
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-/*
-    public int saveLocation(Location vLocation){
 
-        String query="insert into location (datedeb, datefin, utilisateur_idutilisateur, topo_idtopo) values('"+vLocation.getDatedeb()+"','"+vLocation.getDatefin()+"','"+vLocation.getIdUtilisateur()+"','"+vLocation.getIdTopo()+"')";
-
-        return jdbcTemplate.update(query);
-    }*/
 
     public List<Location> getlistLocation() {
 

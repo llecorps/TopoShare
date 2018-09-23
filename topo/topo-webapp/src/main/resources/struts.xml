@@ -136,5 +136,22 @@
             </result>
         </action>
 
+        <action name="comment_new"
+                class="org.lle.demo.topo.webapp.action.GestionCommentAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+
+            <result name="input">/jsp/comment/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">topo_detail</param>
+                <param name="id">${commentaire.topoguide.id}</param>
+            </result>
+        </action>
+
     </package>
 </struts>

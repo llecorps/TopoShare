@@ -11,19 +11,15 @@ public class Topo {
     private String libelle;
     private String lieu;
     private Integer idLocation;
-
-    public Integer getIdUtilisateur() {
-        return idUtilisateur;
-    }
-
-    public void setIdUtilisateur(Integer idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
-    }
-
     private Integer idUtilisateur;
 
     @NotNull
     private Utilisateur responsable;
+
+
+
+    @NotNull
+    private Topo topoguide;
 
     public Topo(){
 
@@ -55,6 +51,12 @@ public class Topo {
         this.id = pId;
     }
 
+    public Integer getIdUtilisateur() {
+        return idUtilisateur;
+    }
+    public void setIdUtilisateur(Integer idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
+    }
 
     public Integer getIdLocation() {
         return idLocation;
@@ -84,16 +86,26 @@ public class Topo {
         responsable = pResponsable;
     }
 
+    public Topo getTopoguide() {
+        return topoguide;
+    }
+
+    public void setTopoguide(Topo topoguide) {
+        this.topoguide = topoguide;
+    }
+
     // ==================== Méthodes ====================
     @Override
     public String toString() {
         final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
         final String vSEP = ", ";
         vStB.append(" {")
+                .append("Idtopo=").append(id)
                 .append("libelle=").append(libelle)
                 .append(vSEP).append("lieu=\"").append(lieu).append('"')
                 .append(vSEP).append("location=").append(idLocation)
-                .append(vSEP).append("utilisateur=").append(responsable)
+                .append(vSEP).append("utilisateur=").append(idUtilisateur)
+                .append(vSEP).append("responsable=").append(responsable)
                 .append("}");
         return vStB.toString();
     }

@@ -10,7 +10,7 @@
         body{
             position: relative; /* required */
             padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
-            background: url('assets/img/fond.jpg') no-repeat center center fixed;
+            background: url('../../WEB-INF/assets/img/fond.jpg') no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
@@ -32,15 +32,10 @@
 
             <s:a action="topo_detail">
                 <s:param name="id" value="id" />
-                <s:property value="lieu"/>
+                <s:property value="libelle"/>
             </s:a>
 
-            Owner :
-            <s:a action="utilisateur_detail">
-                <s:param name="id" value="topo.utilisateur_idutilisateur" />
-                <s:property value="topo.utilisateur.username"/>
-                <s:property value="projet.utilisateur.email"/>
-            </s:a>
+
         </li>
 
         </li>

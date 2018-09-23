@@ -92,24 +92,7 @@ public class GestionUtilisateurAction extends ActionSupport {
         // ===== Validation de l'ajout de projet (projet != null)
         if (this.utilisateur != null) {
 /*
-            // Récupération du responsable
-            if (this.utilisateur.getId() == null) {
-               this.addFieldError("utilisateur.id", "ne doit pas être vide");
-            } else {
-              try {
-                    Utilisateur vIdutilisateur
-                          = WebappHelper.getManagerFactory().getUtilisateurManager()
-                         .getUtilisateur(this.utilisateur.getResponsable().getId());
-                    this.utilisateur.setResponsable(vIdutilisateur);
-                } catch (NotFoundException pEx) {
-                 this.addFieldError("utilisateur.responsable.id", pEx.getMessage());
-               }
-            }
-            // Date de création
-            //this.topo.setDateCreation(new Date());
 
-            // Si pas d'erreur, ajout du projet...
-           if (!this.hasErrors()) {
 */
                 try {
 

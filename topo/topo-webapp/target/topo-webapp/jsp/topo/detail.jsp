@@ -5,11 +5,25 @@
 <html>
 <head>
     <%@ include file="../_include/head.jsp"%>
+    <style type="text/css">
+        body{
+            position: relative; /* required */
+            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
+            background: url('../../WEB-INF/assets/img/fond.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
 <s:actionerror/>
 <s:actionmessage />
+<%@ include file="../../WEB-INF/menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 
 
 <h2><s:text name="nav.detailTopo" /></h2>
@@ -20,14 +34,19 @@
     <li>Libelle : <s:property value="topo.libelle" /></li>
     <li>Lieu : <s:property value="topo.lieu" /></li>
     <li>
-        Owner :
+        Username:
         <s:a action="utilisateur_detail">
-            <s:param name="id" value="topo.utilisateur_idutilisateur" />
-            <s:property value="topo.utilisateur.username"/>
-            <s:property value="topo.utilisateur.email"/>
+            <s:param name="id" value="topo.idUtilisateur" />
+            <s:property value="utilisateur.username"/>
+        Mail :
+            <s:property value="utilisateur.email"/>
         </s:a>
     </li>
 
 </ul>
+
+
+    <s:a action="comment_new"><s:text name="nav.newComment" /></s:a>
+    </div>
 </body>
 </html>

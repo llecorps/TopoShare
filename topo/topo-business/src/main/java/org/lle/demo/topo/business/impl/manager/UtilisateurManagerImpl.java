@@ -34,28 +34,6 @@ public class UtilisateurManagerImpl implements UtilisateurManager {
     UtilisateurDao utilisateurdao=(UtilisateurDao)ctx.getBean("utilisateurdao");
 
     public UtilisateurManagerImpl()  {}
-/*
-    public UtilisateurManagerImpl(Utilisateur newUtilisateur)  {
-        this.newUtilisateur = newUtilisateur;
-    }
-
-    public UtilisateurManagerImpl(String username, String email, String password)  {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
-
-    public void ajoutUtilisateur(String username, String email, String password)  {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-
-    int status=utilisateurdao.saveUtilisateur(new Utilisateur(this.username, this.email,this.password));
-    System.out.println(status);
-
-    }
-*/
-
 
     /**
      * Renvoie la liste des {@link Utilisateur}

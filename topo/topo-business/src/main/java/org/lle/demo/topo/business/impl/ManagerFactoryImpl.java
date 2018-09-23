@@ -1,6 +1,7 @@
 package org.lle.demo.topo.business.impl;
 
 import org.lle.demo.topo.business.contract.ManagerFactory;
+import org.lle.demo.topo.business.contract.manager.CommentManager;
 import org.lle.demo.topo.business.contract.manager.LocationManager;
 import org.lle.demo.topo.business.contract.manager.TopoManager;
 import org.lle.demo.topo.business.contract.manager.UtilisateurManager;
@@ -22,6 +23,8 @@ public class ManagerFactoryImpl implements ManagerFactory {
     private TopoManager topoManager;
     @Inject
     private LocationManager locationManager;
+    @Inject
+    private CommentManager commentManager;
 
 
     @Override
@@ -35,6 +38,10 @@ public class ManagerFactoryImpl implements ManagerFactory {
     @Override
     public LocationManager getLocationManager() {
         return this.locationManager;
+    }
+    @Override
+    public CommentManager getCommentManager() {
+        return this.commentManager;
     }
 
 }

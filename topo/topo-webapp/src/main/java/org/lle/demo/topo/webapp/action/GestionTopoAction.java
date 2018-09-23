@@ -24,6 +24,7 @@ public class GestionTopoAction extends ActionSupport {
     // ----- Eléments en sortie
     private List<Topo> listTopo;
     public Topo topo;
+    public Utilisateur utilisateur;
 
     private List<Utilisateur> listUtilisateur;
 
@@ -77,6 +78,9 @@ public class GestionTopoAction extends ActionSupport {
         } else {
             try {
                 topo = WebappHelper.getManagerFactory().getTopoManager().detailTopo(id);
+                int vIdutilisateur = topo.getIdUtilisateur();
+                utilisateur = WebappHelper.getManagerFactory().getUtilisateurManager().getUtilisateur(vIdutilisateur);
+
             } catch (NotFoundException pE) {
                 this.addActionError(getText("error.topo.notfound", Collections.singletonList(id)));
             }

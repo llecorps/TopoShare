@@ -35,5 +35,9 @@
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 
+    <bean id="commentdao" class="org.lle.demo.topo.consumer.dao.CommentDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
 
 </beans>
