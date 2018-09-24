@@ -13,7 +13,11 @@
 
     <%@ include file="../_include/head.jsp" %>
 </head>
+
 <body>
+<%@ include file="../../WEB-INF/menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 <h2>Commentaire</h2>
 <s:form action="comment_new">
     <s:textfield name="commentaire.description" label="commentaire" requiredLabel="true" size="100"/>
@@ -25,5 +29,6 @@
 
     <s:submit value="OK"/>
 </s:form>
+</div>
 </body>
 </html>

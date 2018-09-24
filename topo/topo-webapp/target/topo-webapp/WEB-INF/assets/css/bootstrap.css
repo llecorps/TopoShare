@@ -247,6 +247,7 @@ th {
   }
   .label {
     border: 1px solid #000;
+    color: #0f0f0f;
   }
   .table {
     border-collapse: collapse !important;
@@ -1586,6 +1587,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  color: #0f0f0f;
 }
 @media (min-width: 768px) {
   .container {

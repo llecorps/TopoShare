@@ -6,17 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Topo</title>
-    <style type="text/css">
-        body{
-            position: relative; /* required */
-            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
-            background: url('../../WEB-INF/assets/img/fond.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-        }
-    </style>
+    <%@ include file="../_include/head.jsp" %>
 </head>
 
 <body>

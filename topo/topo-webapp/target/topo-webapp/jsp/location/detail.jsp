@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+%@ include file="../../WEB-INF/menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 
 <h2><s:text name="nav.detailLocation" /></h2>
 
@@ -35,5 +37,6 @@
     </li>
 
 </ul>
+    </div>
 </body>
 </html>

@@ -41,6 +41,7 @@ body{
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    color: #0f0f0f;
 }
 
 span.round-tab {

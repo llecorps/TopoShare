@@ -21,11 +21,7 @@
 
   <div class="container">
       <%@ include file="jsp/_include/header.jsp" %>
-      <div class="connecting-line" align="center">
-          <!--
-          <s:a action="login"><s:text name="nav.login" /></s:a>
-          -->
-      </div>
+
 
     <h2><s:text name="home.welcome" /></h2>
 

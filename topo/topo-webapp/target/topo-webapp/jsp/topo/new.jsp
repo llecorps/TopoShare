@@ -10,19 +10,24 @@
 <body>
 <s:actionerror/>
 <s:actionmessage/>
-
+<%@ include file="../../WEB-INF/menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 <h2>Création d'un topo</h2>
 
 <s:form action="topo_new">
-    <s:textfield name="topo.libelle" label="Libelle" requiredLabel="true" />
-    <s:textfield name="topo.lieu" label="Lieu" requiredLabel="true" />
-    <s:select name="topo.responsable.id" label="Utilisateur"
+    <ul>
+  <li>Libelle :  <s:textfield name="topo.libelle" label="Libelle" requiredLabel="true" /></li><br>
+  <li>Lieu :  <s:textfield name="topo.lieu" label="Lieu" requiredLabel="true" /></li><br>
+  <li>User :   <s:select name="topo.responsable.id" label="Utilisateur"
               list="listUtilisateur" listKey="id" listValue="username"
               emptyOption="true"
-              requiredLabel="true"/>
+              requiredLabel="true"/></li>
 
 
     <s:submit value="OK"/>
+   </ul>
 </s:form>
+    </div>
 </body>
 </html>

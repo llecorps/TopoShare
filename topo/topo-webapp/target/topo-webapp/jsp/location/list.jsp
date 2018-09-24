@@ -6,9 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Topo</title>
+    <%@ include file="../_include/head.jsp" %>
 </head>
 
 <body>
+<%@ include file="../../WEB-INF/menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 <h2><s:text name="nav.listLocation" /></h2>
 
 <ul>
@@ -36,5 +40,6 @@
 <h3><s:text name="nav.funcLocation" /></h3>
 
 <s:a action="location_new"><s:text name="nav.newLocation" /></s:a>
+</div>
 </body>
 </html>

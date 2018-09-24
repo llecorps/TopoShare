@@ -14,15 +14,6 @@
     </s:else>
 </header>
 
-<nav>
-    <!--
-    <s:a action="topo_list">
-        <s:text name="nav.listTopo" />
-    </s:a>
-    -->
-    <p>Mon Compte -    <s:a action="utilisateur_new">Créer un compte</s:a>
-    </p>
-</nav>
 
 <s:actionerror/>
 <s:actionmessage/>
