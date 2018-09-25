@@ -4,11 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-    <link rel="stylesheet" type="text/css" href="WEB-INF/css/styles.css" />
     <title>Topo</title>
 
     <%@ include file="jsp/_include/head.jsp" %>

@@ -7,6 +7,22 @@
 <meta charset="utf-8" />
 <title>Menu</title>
 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <style type="text/css">
+        body{
+            position: relative; /* required */
+            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
+            background: url('assets/img/fond.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+    </style>
+
 </head>
 
 <body data-spy="scroll" data-target="#myNavbar" data-offset="70">

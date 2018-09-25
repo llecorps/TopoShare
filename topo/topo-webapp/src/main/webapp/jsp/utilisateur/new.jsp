@@ -18,15 +18,12 @@
 <h2>User Add</h2>
 
 <s:form action="utilisateur_new">
-    <ul>
-   <li>Username : <s:textfield name="utilisateur.username" label="username" requiredLabel="true" /></li><br>
-   <li>Password :<s:textfield name="utilisateur.email" label="email" requiredLabel="true" /></li><br>
-   <li>Mail : <s:textfield name="utilisateur.password" label="password" requiredLabel="true" /></li><br>
 
-
-
+    <s:textfield name="utilisateur.username" label="username" requiredLabel="true" />
+    <s:textfield name="utilisateur.email" label="email" requiredLabel="true" />
+    <s:textfield name="utilisateur.password" label="password" requiredLabel="true" />
     <s:submit value="OK"/>
-</ul>
+
 </s:form>
     </div>
 </body>
