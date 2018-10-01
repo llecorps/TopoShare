@@ -27,7 +27,7 @@ public class TopoDao {
 
     public int saveTopo(Topo vTopo){
 
-        String query="insert into topo (libelle,lieu,utilisateur_idutilisateur) values('"+vTopo.getLibelle()+"','"+vTopo.getLieu()+"','"+vTopo.getResponsable().getId()+"')";
+        String query="insert into topo (libelle,lieu,secteur,statut,utilisateur_idutilisateur) values('"+vTopo.getLibelle()+"','"+vTopo.getLieu()+"','"+vTopo.getSecteur()+"','"+vTopo.getStatut()+"','"+vTopo.getResponsable().getId()+"')";
 
         return jdbcTemplate.update(query);
     }

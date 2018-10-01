@@ -118,14 +118,14 @@ public class GestionTopoAction extends ActionSupport {
                     this.addFieldError("topo.responsable.id", pEx.getMessage());
                 }
             }
-            // Date de création
-            //this.topo.setDateCreation(new Date());
+
 
             // Si pas d'erreur, ajout du projet...
             if (!this.hasErrors()) {
                 try {
 
-                    WebappHelper.getManagerFactory().getTopoManager().ajoutTopo(this.topo.getLibelle(), this.topo.getLieu(), this.topo.getResponsable());
+                    WebappHelper.getManagerFactory().getTopoManager().ajoutTopo(this.topo.getLibelle(),
+                            this.topo.getLieu(), this.topo.getSecteur(),this.topo.getStatut(), this.topo.getResponsable());
                     // Si ajout avec succès -> Result "success"
                     vResult = ActionSupport.SUCCESS;
                     this.addActionMessage("Projet ajouté avec succès");

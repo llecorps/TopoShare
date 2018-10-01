@@ -39,5 +39,8 @@
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 
+    <bean id="voiedao" class="org.lle.demo.topo.consumer.dao.VoieDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
 
 </beans>

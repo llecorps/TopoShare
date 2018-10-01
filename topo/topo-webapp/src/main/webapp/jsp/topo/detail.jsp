@@ -33,6 +33,8 @@
     <li>ID : <s:property value="topo.id" /></li>
     <li>Libelle : <s:property value="topo.libelle" /></li>
     <li>Lieu : <s:property value="topo.lieu" /></li>
+    <li>Secteur : <s:property value="topo.secteur" /></li>
+    <li>Statut : <s:property value="topo.statut" /></li>
     <li>
         Username:
         <s:a action="utilisateur_detail">

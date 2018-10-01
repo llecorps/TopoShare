@@ -6,6 +6,16 @@
 <head>
     <%@ include file="./_include/head.jsp" %>
 
+        <style type="text/css">
+
+           label[for="nameFieldId"] {
+               color: midnightblue;
+           }
+           label[for="passFieldId"] {
+               color: midnightblue;
+           }
+
+        </style>
 </head>
 
 <body>
@@ -20,8 +30,8 @@
 
     <s:form action="login">
 
-        <s:textfield name="Login" label="Identifiant" requiredLabel="true"/>
-        <s:password name="password" label="Mot de passe" requiredLabel="true" />
+        <s:textfield name="Login" label="Identifiant" requiredLabel="true" id="nameFieldId"/>
+        <s:password name="password" label="Mot de passe" requiredLabel="true" id="passFieldId" />
         <s:submit value="Connexion"/>
     </s:form>
 

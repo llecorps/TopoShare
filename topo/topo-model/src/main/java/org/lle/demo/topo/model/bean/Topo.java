@@ -10,6 +10,8 @@ public class Topo {
     private Integer id;
     private String libelle;
     private String lieu;
+    private String secteur;
+    private String statut;
     private Integer idLocation;
     private Integer idUtilisateur;
 
@@ -17,14 +19,13 @@ public class Topo {
     private Utilisateur responsable;
 
 
-
     @NotNull
     private Topo topoguide;
 
-    public Topo(){
+    public Topo() {
 
     }
-
+/*
     public Topo(String libelle, String lieu, int idUtilisateur, int idLocation) {
 
         this.libelle = libelle;
@@ -32,15 +33,17 @@ public class Topo {
         this.idUtilisateur = idUtilisateur;
         this.idLocation = idLocation;
     }
-
+*/
     public Topo(Integer pId) {
         id = pId;
     }
 
-    public Topo(String libelle, String lieu, Utilisateur responsable ) {
+    public Topo(String libelle, String lieu, String secteur, String statut, Utilisateur responsable ) {
 
         this.libelle = libelle;
         this.lieu = lieu;
+        this.secteur = secteur;
+        this.statut = statut;
         this.responsable = responsable;
     }
 
@@ -79,6 +82,22 @@ public class Topo {
         lieu = pLieu;
     }
 
+    public String getSecteur() {
+        return secteur;
+    }
+
+    public void setSecteur(String secteur) {
+        this.secteur = secteur;
+    }
+
+    public String getStatut() {
+        return statut;
+    }
+
+    public void setStatut(String statut) {
+        this.statut = statut;
+    }
+
     public Utilisateur getResponsable() {
         return responsable;
     }
@@ -103,6 +122,8 @@ public class Topo {
                 .append("Idtopo=").append(id)
                 .append("libelle=").append(libelle)
                 .append(vSEP).append("lieu=\"").append(lieu).append('"')
+                .append(vSEP).append("secteur=").append(secteur)
+                .append(vSEP).append("statut=").append(statut)
                 .append(vSEP).append("location=").append(idLocation)
                 .append(vSEP).append("utilisateur=").append(idUtilisateur)
                 .append(vSEP).append("responsable=").append(responsable)

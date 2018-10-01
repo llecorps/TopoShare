@@ -5,6 +5,19 @@
 <html>
 <head>
     <%@ include file="../_include/head.jsp" %>
+    <style type="text/css">
+
+        label[for="nameFieldId"] {
+            color: midnightblue;
+        }
+        label[for="mailFieldId"] {
+            color: midnightblue;
+        }
+        label[for="passFieldId"] {
+            color: midnightblue;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -19,9 +32,9 @@
 
 <s:form action="utilisateur_new">
 
-    <s:textfield name="utilisateur.username" label="username" requiredLabel="true" />
-    <s:textfield name="utilisateur.email" label="email" requiredLabel="true" />
-    <s:textfield name="utilisateur.password" label="password" requiredLabel="true" />
+    <s:textfield name="utilisateur.username" label="username" requiredLabel="true" id="nameFieldId"/>
+    <s:textfield name="utilisateur.email" label="email" requiredLabel="true" id="mailFieldId"/>
+    <s:textfield name="utilisateur.password" label="password" requiredLabel="true" id="passFieldId"/>
     <s:submit value="OK"/>
 
 </s:form>

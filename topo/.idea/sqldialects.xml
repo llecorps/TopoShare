@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/lle/demo/topo/consumer/dao/LocationDao.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/lle/demo/topo/consumer/dao/TopoDao.java" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/lle/demo/topo/consumer/dao/UtilisateurDao.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/topo-consumer/src/main/java/org/lle/demo/topo/consumer/dao/VoieDao.java" dialect="PostgreSQL" />
   </component>
 </project>
