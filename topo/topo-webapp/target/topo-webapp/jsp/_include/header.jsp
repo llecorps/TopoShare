@@ -7,10 +7,10 @@
         <s:property value="#session.utilisateur.username" />
         <s:property value="#session.utilisateur.email" />
 
-        <s:a action="logout">Déconnexion</s:a>
+        <s:a action="logout">Logout</s:a>
     </s:if>
     <s:else>
-        <s:a action="login">Connexion</s:a>
+        <s:a action="login">Login</s:a>
     </s:else>
 </header>
 

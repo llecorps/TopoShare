@@ -40,6 +40,7 @@
 <h3><s:text name="nav.funcLocation" /></h3>
 
 <s:a action="location_new"><s:text name="nav.newLocation" /></s:a>
+    <%@ include file="../_include/footer.jsp" %>
 </div>
 </body>
 </html>

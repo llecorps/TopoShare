@@ -3,39 +3,17 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+
     <%@ include file="../_include/head.jsp" %>
-
-    <style type="text/css">
-
-        label[for="nameFieldId"] {
-            color: midnightblue;
-        }
-        label[for="notationFieldId"] {
-            color: midnightblue;
-        }
-        label[for="topoFieldId"] {
-            color: midnightblue;
-        }
-        label[for="hauteurFieldId"] {
-            color: midnightblue;
-        }
-        label[for="largeurFieldId"] {
-            color: midnightblue;
-        }
-
-    </style>
-
-
-</head>
-
 <body>
 <s:actionerror/>
 <s:actionmessage/>
 <%@ include file="../menu.jsp" %>
 <div class="container">
     <%@ include file="../_include/header.jsp" %>
-    <h2>Création d'une Voie</h2>
+    <h2>New way</h2>
+
+    <s:if test="#session.utilisateur">
 
     <s:form action="voie_new">
 
@@ -50,6 +28,12 @@
         <s:submit value="OK"/>
 
     </s:form>
+    /s:if>
+    <s:else>
+        <s:a action="login">Logon required !</s:a>
+    </s:else>
+
+    <%@ include file="../_include/footer.jsp" %>
 </div>
 </body>
 </html>

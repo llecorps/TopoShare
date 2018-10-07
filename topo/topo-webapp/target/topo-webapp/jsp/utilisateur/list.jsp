@@ -3,11 +3,8 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>User</title>
     <%@ include file="../_include/head.jsp" %>
-</head>
+
 
 <body>
 <%@ include file="../menu.jsp" %>
@@ -30,8 +27,7 @@
         </li>
     </s:iterator>
 </ul>
-<h3><s:text name="nav.funcUser" /></h3>
-<s:a action="utilisateur_new"><s:text name="nav.newUser" /></s:a>
+    <%@ include file="../_include/footer.jsp" %>
 </div>
 </body>
 </html>

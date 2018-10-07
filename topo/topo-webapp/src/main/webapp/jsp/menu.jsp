@@ -39,7 +39,7 @@
             </li>
             <li class="nav-item">
 
-                <s:a action="login" class="nav-link disabled"><s:text name="nav.login" /></s:a> <span class="sr-only">(current)</span></a>
+                <s:a action="utilisateur_new" class="nav-link disabled"><s:text name="nav.login" /></s:a> <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

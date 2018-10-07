@@ -3,20 +3,9 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+
     <%@ include file="../_include/head.jsp"%>
-    <style type="text/css">
-        body{
-            position: relative; /* required */
-            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
-            background: url('../../WEB-INF/assets/img/fond.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-        }
-    </style>
-</head>
+
 
 <body>
 <s:actionerror/>
@@ -45,7 +34,7 @@
     </li>
 
 </ul>
-
+    <%@ include file="../_include/footer.jsp" %>
     </div>
 </body>
 </html>

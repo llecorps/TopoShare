@@ -35,6 +35,7 @@
 <h3><s:text name="nav.funcTopo" /></h3>
 
 <s:a action="topo_new"><s:text name="nav.newTopo" /></s:a>
+    <%@ include file="../_include/footer.jsp" %>
     </div>
 </body>
 </html>

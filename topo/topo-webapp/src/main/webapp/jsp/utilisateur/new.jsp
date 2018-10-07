@@ -3,22 +3,8 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+
     <%@ include file="../_include/head.jsp" %>
-    <style type="text/css">
-
-        label[for="nameFieldId"] {
-            color: midnightblue;
-        }
-        label[for="mailFieldId"] {
-            color: midnightblue;
-        }
-        label[for="passFieldId"] {
-            color: midnightblue;
-        }
-
-    </style>
-</head>
 
 <body>
 <s:actionerror/>
@@ -38,6 +24,7 @@
     <s:submit value="OK"/>
 
 </s:form>
+    <%@ include file="../_include/footer.jsp" %>
     </div>
 </body>
 </html>

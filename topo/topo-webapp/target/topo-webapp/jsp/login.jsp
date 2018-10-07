@@ -31,7 +31,7 @@
         <s:password name="password" label="Mot de passe" requiredLabel="true" id="passFieldId" />
         <s:submit value="Connexion"/>
     </s:form>
-
+    <%@ include file="/jsp/_include/footer.jsp" %>
 </div>
 </body>
 </html>

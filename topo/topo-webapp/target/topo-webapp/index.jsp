@@ -31,7 +31,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Location</h5>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <s:a action="location_list" class="btn btn-primary"><s:text name="nav.listLocation" /></s:a>
+                    <s:a action="location_list" class="btn btn-primary"><s:text name="nav.goLocation" /></s:a>
                 </div>
             </div>
     </div>
