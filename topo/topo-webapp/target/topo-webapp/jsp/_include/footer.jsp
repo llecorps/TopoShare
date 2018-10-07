@@ -34,12 +34,7 @@
 
                 </ul>
             </div>
-            <div class="col-md-3">
-                <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#">Product Help</a></li>
 
-                </ul>
-            </div>
         </div>
     </div>
     <hr>

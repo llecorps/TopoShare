@@ -32,7 +32,7 @@
 <body>
 <s:actionerror/>
 <s:actionmessage/>
-<%@ include file="../../WEB-INF/menu.jsp" %>
+<%@ include file="../menu.jsp" %>
 <div class="container">
     <%@ include file="../_include/header.jsp" %>
     <h2>Création d'une Voie</h2>

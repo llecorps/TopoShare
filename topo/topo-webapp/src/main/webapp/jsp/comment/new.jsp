@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<%@ include file="../../WEB-INF/menu.jsp" %>
+<%@ include file="../menu.jsp" %>
 <div class="container">
     <%@ include file="../_include/header.jsp" %>
 <h2>Commentaire</h2>

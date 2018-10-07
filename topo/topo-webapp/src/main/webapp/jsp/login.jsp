@@ -1,29 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="/struts-tags" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <%@ include file="./_include/head.jsp" %>
+    <meta charset="utf-8" />
+    <title>Menu</title>
 
-        <style type="text/css">
+    <link href="<c:url value="/jsp/assets/css/bootstrap.css" />" rel="stylesheet">
+    <script src="<c:url value="/jsp/assets/js/jquery.js" />"></script>
+    <script src="<c:url value="/jsp/assets/js/bootstrap.min.js" />"></script>
 
-           label[for="nameFieldId"] {
-               color: midnightblue;
-           }
-           label[for="passFieldId"] {
-               color: midnightblue;
-           }
 
-        </style>
+
 </head>
-
 <body>
-<%@ include file="../WEB-INF/menu.jsp" %>
+<%@ include file="menu.jsp" %>
 
 
 <div class="container" >
-    <%@ include file="./_include/header.jsp" %>
+    <%@ include file="_include/header.jsp" %>
     <h2>Connexion</h2>
 
 
