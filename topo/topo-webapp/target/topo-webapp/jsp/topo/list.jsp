@@ -16,13 +16,15 @@
 
 <h2><s:text name="nav.listTopo" /></h2>
 
-<ul>
+    <ul class="list-group list-group-flush">
     <s:iterator value="listTopo">
-        <li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
 
             <s:a action="topo_detail">
                 <s:param name="id" value="id" />
+
                 <s:property value="libelle"/>
+
             </s:a>
 
 

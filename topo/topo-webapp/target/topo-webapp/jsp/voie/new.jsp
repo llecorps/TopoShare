@@ -27,8 +27,8 @@
                   requiredLabel="true"/>
         <s:submit value="OK"/>
 
-    </s:form>
-    /s:if>
+    </s:form>fv
+    </s:if>
     <s:else>
         <s:a action="login">Logon required !</s:a>
     </s:else>

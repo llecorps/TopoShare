@@ -3,6 +3,7 @@ package org.lle.demo.topo.webapp.action;
 import com.opensymphony.xwork2.ActionSupport;
 import org.lle.demo.topo.model.bean.Topo;
 import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.Voie;
 import org.lle.demo.topo.model.bean.exception.FunctionalException;
 import org.lle.demo.topo.model.bean.exception.NotFoundException;
 import org.lle.demo.topo.model.bean.exception.TechnicalException;
@@ -25,7 +26,7 @@ public class GestionTopoAction extends ActionSupport {
     private List<Topo> listTopo;
     public Topo topo;
     public Utilisateur utilisateur;
-
+    public Voie voie;
     private List<Utilisateur> listUtilisateur;
 
     // ==================== Getters/Setters ====================
@@ -80,6 +81,7 @@ public class GestionTopoAction extends ActionSupport {
                 topo = WebappHelper.getManagerFactory().getTopoManager().detailTopo(id);
                 int vIdutilisateur = topo.getIdUtilisateur();
                 utilisateur = WebappHelper.getManagerFactory().getUtilisateurManager().getUtilisateur(vIdutilisateur);
+                voie = WebappHelper.getManagerFactory().getVoieManager().detailVoie(id);
 
             } catch (NotFoundException pE) {
                 this.addActionError(getText("error.topo.notfound", Collections.singletonList(id)));

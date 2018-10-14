@@ -14,14 +14,15 @@
 
 
 
-<ul>
+    <ul class="list-group list-group-flush">
     <s:iterator value="listUtilisateur">
-        <li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
             <s:a action="utilisateur_list">
                 <s:param name="id" value="idutilisateur" />
-                <s:property value="username"/>--
-                <s:property value="email"/>--
-                <s:property value="password"/>
+                <s:property value="username"/>
+                <span class="badge badge-primary badge-pill">
+                <s:property value="email"/>
+                </span>
             </s:a>
 
         </li>

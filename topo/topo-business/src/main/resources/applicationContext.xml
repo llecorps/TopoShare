@@ -43,4 +43,9 @@
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 
+    <bean id="searchdao" class="org.lle.demo.topo.consumer.dao.SearchDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+
 </beans>

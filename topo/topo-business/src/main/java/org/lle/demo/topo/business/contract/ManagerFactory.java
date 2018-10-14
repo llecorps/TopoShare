@@ -14,4 +14,5 @@ public interface ManagerFactory {
     LocationManager getLocationManager();
     CommentManager getCommentManager();
     VoieManager getVoieManager();
+    SearchManager getSearchManager();
 }

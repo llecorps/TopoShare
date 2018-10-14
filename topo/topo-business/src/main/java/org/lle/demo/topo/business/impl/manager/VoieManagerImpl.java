@@ -13,6 +13,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by esspressoh on 30.09.18.
@@ -23,6 +25,7 @@ public class VoieManagerImpl implements VoieManager {
     private String libelle, notation, hauteur, largeur;
     private Integer topoId;
     private Voie voie;
+    protected List<Voie> listVoie;
 
     /** Logger pour la classe */
     private static final Log LOGGER = LogFactory.getLog(TopoManagerImpl.class);
@@ -45,5 +48,13 @@ public class VoieManagerImpl implements VoieManager {
 
         voie = voiedao.getVoie(id);
         return voie;
+    }
+
+    @Override
+    public List<Voie> listVoie() {
+        listVoie = new ArrayList<>() ;
+        listVoie=voiedao.getlistVoie();
+
+        return listVoie;
     }
 }

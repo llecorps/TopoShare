@@ -24,6 +24,8 @@ public class ManagerFactoryImpl implements ManagerFactory {
     private CommentManager commentManager;
     @Inject
     private VoieManager voieManager;
+    @Inject
+    private SearchManager searchManager;
 
 
     @Override
@@ -45,6 +47,10 @@ public class ManagerFactoryImpl implements ManagerFactory {
     @Override
     public VoieManager getVoieManager() {
         return this.voieManager;
+    }
+    @Override
+    public SearchManager getSearchManager() {
+        return this.searchManager;
     }
 
 }

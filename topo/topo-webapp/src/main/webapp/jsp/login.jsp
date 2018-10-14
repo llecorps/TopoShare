@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Menu</title>
+    <title>Login</title>
 
     <link href="<c:url value="/jsp/assets/css/bootstrap.css" />" rel="stylesheet">
     <script src="<c:url value="/jsp/assets/js/jquery.js" />"></script>
@@ -25,7 +25,7 @@
 
 
 
-    <s:form action="login">
+    <s:form action="login" class="form-group">
 
         <s:textfield name="Login" label="Identifiant" requiredLabel="true" id="nameFieldId"/>
         <s:password name="password" label="Mot de passe" requiredLabel="true" id="passFieldId" />

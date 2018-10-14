@@ -25,15 +25,7 @@ public class Topo {
     public Topo() {
 
     }
-/*
-    public Topo(String libelle, String lieu, int idUtilisateur, int idLocation) {
 
-        this.libelle = libelle;
-        this.lieu = lieu;
-        this.idUtilisateur = idUtilisateur;
-        this.idLocation = idLocation;
-    }
-*/
     public Topo(Integer pId) {
         id = pId;
     }
@@ -120,7 +112,7 @@ public class Topo {
         final String vSEP = ", ";
         vStB.append(" {")
                 .append("Idtopo=").append(id)
-                .append("libelle=").append(libelle)
+                .append(vSEP).append("libelle=").append(libelle)
                 .append(vSEP).append("lieu=\"").append(lieu).append('"')
                 .append(vSEP).append("secteur=").append(secteur)
                 .append(vSEP).append("statut=").append(statut)

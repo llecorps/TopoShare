@@ -15,9 +15,9 @@
     <%@ include file="../_include/header.jsp" %>
 <h2><s:text name="nav.listLocation" /></h2>
 
-<ul>
+    <ul class="list-group list-group-flush">
     <s:iterator value="listLocation">
-        <li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
 
             <s:a action="location_detail">
                 <s:param name="id" value="id" />
@@ -27,13 +27,16 @@
 
             Topo :
             <s:a action="topo_detail">
-                <s:param name="id" value="location.topo.id" />
-                <s:property value="location.topo.libelle"/>
-                <s:property value="location.topo.lieu"/>
+                <s:param name="id" value="location.topo_idtopo" />
+
+                <s:property value="topo.libelle"/>
+
+
+                <s:property value="topo.lieu"/>
             </s:a>
         </li>
 
-        </li>
+
     </s:iterator>
 </ul>
 <br>
