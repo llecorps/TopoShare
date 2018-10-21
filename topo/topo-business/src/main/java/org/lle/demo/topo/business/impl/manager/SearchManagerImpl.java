@@ -3,7 +3,7 @@ package org.lle.demo.topo.business.impl.manager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.lle.demo.topo.business.contract.manager.SearchManager;
-import org.lle.demo.topo.consumer.dao.SearchDao;
+import org.lle.demo.topo.consumer.dao.TopoDao;
 import org.lle.demo.topo.model.bean.Search;
 import org.lle.demo.topo.model.bean.Topo;
 import org.lle.demo.topo.model.bean.exception.FunctionalException;
@@ -26,7 +26,8 @@ public class SearchManagerImpl implements SearchManager {
     private static final Log LOGGER = LogFactory.getLog(TopoManagerImpl.class);
 
     ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
-    SearchDao searchdao=(SearchDao)ctx.getBean("searchdao");
+    //SearchDao searchdao=(SearchDao)ctx.getBean("searchdao");
+    TopoDao topodao=(TopoDao)ctx.getBean("topodao");
 
     public SearchManagerImpl() {
 
@@ -39,11 +40,12 @@ public class SearchManagerImpl implements SearchManager {
     }
 
     @Override
-    public Search searchMot(String mot, String champ, String statut, String notation) throws FunctionalException, TechnicalException {
+    public Topo searchMot(String mot, String champ, String statut, String notation) throws FunctionalException, TechnicalException {
 
 
+        newTopo=topodao.getLibelleTopo(mot, statut, notation);
 
-        return null;
+        return newTopo;
     }
 
 

@@ -45,18 +45,15 @@ public class TopoDao {
     }
 
     public Topo getTopo(Integer id){
-
-
         String vSQL="select * from topo where idtopo ="+id;
-
         RowMapper<Topo> vRowMapper = new TopoRM();
-
-
        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
-
-
-
         }
 
+    public Topo getLibelleTopo( String mot, String statut, String notation){
+        String vSQL="select * from topo where libelle ="+mot +"where statut="+statut+"where notation="+notation;
+        RowMapper<Topo> vRowMapper = new TopoRM();
+        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
+    }
 
 }

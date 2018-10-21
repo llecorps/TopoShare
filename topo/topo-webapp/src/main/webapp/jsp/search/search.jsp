@@ -22,10 +22,10 @@
 
         <s:checkboxlist label="Champ" name="search.champ" list="champTopo" />
         <s:select label="Statut" name="search.statut" list="champSelect" />
-        <s:select label="Notation inférieure à"
+        <s:select label="Notation"
                   list="listVoie" listKey="id" listValue="notation"
                   emptyOption="true"
-                  />
+                 name="search.notation" />
 
 
         <s:submit value="OK"/>
