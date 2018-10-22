@@ -3,11 +3,7 @@
 
 <!DOCTYPE html>
 <html>
-
     <%@ include file="../_include/head.jsp"%>
-
-
-
 <body>
 <s:actionerror/>
 <s:actionmessage />
@@ -63,7 +59,8 @@
 
     <s:a action="voie_new"><s:text name="nav.addWay" /></s:a>
     <s:a action="comment_new"><s:text name="nav.newComment" /></s:a>
-    <%@ include file="../_include/footer.jsp" %>
+
+
     </div>
 </body>
 </html>

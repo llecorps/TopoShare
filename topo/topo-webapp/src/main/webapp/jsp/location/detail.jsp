@@ -3,12 +3,14 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+
     <%@ include file="../_include/head.jsp"%>
-</head>
+
 
 <body>
-%@ include file="../../WEB-INF/menu.jsp" %>
+<s:actionerror/>
+<s:actionmessage />
+<%@ include file="../menu.jsp" %>
 <div class="container">
     <%@ include file="../_include/header.jsp" %>
 
@@ -37,6 +39,7 @@
     </li>
 
 </ul>
+    <%@ include file="../_include/footer.jsp" %>
     </div>
 </body>
 </html>

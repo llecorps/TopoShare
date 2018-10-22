@@ -51,7 +51,7 @@ public class TopoDao {
         }
 
     public Topo getLibelleTopo( String mot, String statut, String notation){
-        String vSQL="select * from topo where libelle ="+mot +"where statut="+statut+"where notation="+notation;
+        String vSQL="select * from topo where libelle ='"+mot+"' AND statut='"+statut+"'";
         RowMapper<Topo> vRowMapper = new TopoRM();
         return jdbcTemplate.queryForObject(vSQL, vRowMapper);
     }
