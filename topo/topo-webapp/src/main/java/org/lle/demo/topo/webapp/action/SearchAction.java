@@ -24,12 +24,21 @@ public class SearchAction extends ActionSupport {
     public List<String> champTopo;
     public List<String> champSelect;
     public Topo topo;
+    private List<Topo> listTopo;
     private List<Voie> listVoie;
+
+    public List<Topo> getListTopo() {
+        return listTopo;
+    }
+
+    public void setListTopo(List<Topo> listTopo) {
+        this.listTopo = listTopo;
+    }
+
 
     public List<Voie> getListVoie() {
         return listVoie;
     }
-
     public void setListVoie(List<Voie> listVoie) {
         this.listVoie = listVoie;
     }
@@ -80,7 +89,7 @@ public class SearchAction extends ActionSupport {
 
 
 
-            topo =WebappHelper.getManagerFactory().getSearchManager().searchMot(this.search.getMot(), this.search.getChamp());
+                    listTopo =WebappHelper.getManagerFactory().getSearchManager().searchMot(this.search.getMot(), this.search.getChamp());
                     vResult = ActionSupport.SUCCESS;
                     this.addActionMessage("Recherche effectuée");
                 } catch (FunctionalException pEx) {
@@ -96,7 +105,7 @@ public class SearchAction extends ActionSupport {
         }
         }
 
-        if (vResult.equals(ActionSupport.INPUT)) {
+       if (vResult.equals(ActionSupport.INPUT)) {
             this.listVoie = WebappHelper.getManagerFactory().getVoieManager().listVoie();
         }
 
