@@ -14,7 +14,7 @@ import java.util.List;
 public interface TopoManager {
 
 
-    public List ListTopo();
+     List<Topo> ListTopo();
 
     /**
      * Renvoie le topo demandé
@@ -32,7 +32,7 @@ public interface TopoManager {
      * @throws FunctionalException Projet invalide
      * @throws TechnicalException Erreur technique
      */
-    void ajoutTopo(String libelle, String lieu, Utilisateur utilisateur) throws FunctionalException, TechnicalException;
+    void ajoutTopo(String libelle, String lieu, String secteur, String statut, Utilisateur utilisateur) throws FunctionalException, TechnicalException;
 
 
 

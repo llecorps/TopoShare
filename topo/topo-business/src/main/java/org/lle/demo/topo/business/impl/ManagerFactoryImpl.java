@@ -1,9 +1,7 @@
 package org.lle.demo.topo.business.impl;
 
 import org.lle.demo.topo.business.contract.ManagerFactory;
-import org.lle.demo.topo.business.contract.manager.LocationManager;
-import org.lle.demo.topo.business.contract.manager.TopoManager;
-import org.lle.demo.topo.business.contract.manager.UtilisateurManager;
+import org.lle.demo.topo.business.contract.manager.*;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -22,6 +20,12 @@ public class ManagerFactoryImpl implements ManagerFactory {
     private TopoManager topoManager;
     @Inject
     private LocationManager locationManager;
+    @Inject
+    private CommentManager commentManager;
+    @Inject
+    private VoieManager voieManager;
+    @Inject
+    private SearchManager searchManager;
 
 
     @Override
@@ -35,6 +39,18 @@ public class ManagerFactoryImpl implements ManagerFactory {
     @Override
     public LocationManager getLocationManager() {
         return this.locationManager;
+    }
+    @Override
+    public CommentManager getCommentManager() {
+        return this.commentManager;
+    }
+    @Override
+    public VoieManager getVoieManager() {
+        return this.voieManager;
+    }
+    @Override
+    public SearchManager getSearchManager() {
+        return this.searchManager;
     }
 
 }

@@ -3,12 +3,16 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+
     <%@ include file="../_include/head.jsp"%>
-</head>
+
 
 <body>
-
+<s:actionerror/>
+<s:actionmessage />
+<%@ include file="../menu.jsp" %>
+<div class="container">
+    <%@ include file="../_include/header.jsp" %>
 
 <h2><s:text name="nav.detailLocation" /></h2>
 
@@ -35,5 +39,7 @@
     </li>
 
 </ul>
+    <%@ include file="../_include/footer.jsp" %>
+    </div>
 </body>
 </html>

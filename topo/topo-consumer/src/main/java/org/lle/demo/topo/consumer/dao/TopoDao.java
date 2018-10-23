@@ -27,7 +27,7 @@ public class TopoDao {
 
     public int saveTopo(Topo vTopo){
 
-        String query="insert into topo (libelle,lieu,utilisateur_idutilisateur) values('"+vTopo.getLibelle()+"','"+vTopo.getLieu()+"','"+vTopo.getResponsable().getId()+"')";
+        String query="insert into topo (libelle,lieu,secteur,statut,utilisateur_idutilisateur) values('"+vTopo.getLibelle()+"','"+vTopo.getLieu()+"','"+vTopo.getSecteur()+"','"+vTopo.getStatut()+"','"+vTopo.getResponsable().getId()+"')";
 
         return jdbcTemplate.update(query);
     }
@@ -45,18 +45,15 @@ public class TopoDao {
     }
 
     public Topo getTopo(Integer id){
-
-
         String vSQL="select * from topo where idtopo ="+id;
-
         RowMapper<Topo> vRowMapper = new TopoRM();
-
-
        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
-
-
-
         }
 
+    public Topo getLibelleTopo( String mot, String champ){
+        String vSQL="select * from topo where "+champ+"='"+mot+"'";
+        RowMapper<Topo> vRowMapper = new TopoRM();
+        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
+    }
 
 }

@@ -10,41 +10,32 @@ public class Topo {
     private Integer id;
     private String libelle;
     private String lieu;
+    private String secteur;
+    private String statut;
     private Integer idLocation;
-
-    public Integer getIdUtilisateur() {
-        return idUtilisateur;
-    }
-
-    public void setIdUtilisateur(Integer idUtilisateur) {
-        this.idUtilisateur = idUtilisateur;
-    }
-
     private Integer idUtilisateur;
 
     @NotNull
     private Utilisateur responsable;
 
-    public Topo(){
 
-    }
+    @NotNull
+    private Topo topoguide;
 
-    public Topo(String libelle, String lieu, int idUtilisateur, int idLocation) {
+    public Topo() {
 
-        this.libelle = libelle;
-        this.lieu = lieu;
-        this.idUtilisateur = idUtilisateur;
-        this.idLocation = idLocation;
     }
 
     public Topo(Integer pId) {
         id = pId;
     }
 
-    public Topo(String libelle, String lieu, Utilisateur responsable ) {
+    public Topo(String libelle, String lieu, String secteur, String statut, Utilisateur responsable ) {
 
         this.libelle = libelle;
         this.lieu = lieu;
+        this.secteur = secteur;
+        this.statut = statut;
         this.responsable = responsable;
     }
 
@@ -55,6 +46,12 @@ public class Topo {
         this.id = pId;
     }
 
+    public Integer getIdUtilisateur() {
+        return idUtilisateur;
+    }
+    public void setIdUtilisateur(Integer idUtilisateur) {
+        this.idUtilisateur = idUtilisateur;
+    }
 
     public Integer getIdLocation() {
         return idLocation;
@@ -77,11 +74,35 @@ public class Topo {
         lieu = pLieu;
     }
 
+    public String getSecteur() {
+        return secteur;
+    }
+
+    public void setSecteur(String secteur) {
+        this.secteur = secteur;
+    }
+
+    public String getStatut() {
+        return statut;
+    }
+
+    public void setStatut(String statut) {
+        this.statut = statut;
+    }
+
     public Utilisateur getResponsable() {
         return responsable;
     }
     public void setResponsable(Utilisateur pResponsable) {
         responsable = pResponsable;
+    }
+
+    public Topo getTopoguide() {
+        return topoguide;
+    }
+
+    public void setTopoguide(Topo topoguide) {
+        this.topoguide = topoguide;
     }
 
     // ==================== Méthodes ====================
@@ -90,10 +111,14 @@ public class Topo {
         final StringBuilder vStB = new StringBuilder(this.getClass().getSimpleName());
         final String vSEP = ", ";
         vStB.append(" {")
-                .append("libelle=").append(libelle)
+                .append("Idtopo=").append(id)
+                .append(vSEP).append("libelle=").append(libelle)
                 .append(vSEP).append("lieu=\"").append(lieu).append('"')
+                .append(vSEP).append("secteur=").append(secteur)
+                .append(vSEP).append("statut=").append(statut)
                 .append(vSEP).append("location=").append(idLocation)
-                .append(vSEP).append("utilisateur=").append(responsable)
+                .append(vSEP).append("utilisateur=").append(idUtilisateur)
+                .append(vSEP).append("responsable=").append(responsable)
                 .append("}");
         return vStB.toString();
     }

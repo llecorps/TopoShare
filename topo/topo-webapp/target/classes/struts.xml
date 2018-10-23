@@ -78,9 +78,35 @@
 
             <result name="input">/jsp/topo/new.jsp</result>
             <result name="success" type="redirectAction">
-                <param name="actionName">topo_detail</param>
-                <param name="id">${topo.responsable.id}</param>
+                <param name="actionName">voie_new</param>
+                <param name="id">${topo.id}</param>
             </result>
+        </action>
+
+        <!-- Action affichant détail Voie -->
+
+       <action name="voie_new"
+        class="org.lle.demo.topo.webapp.action.GestionVoieAction"
+        method="doCreate">
+
+        <interceptor-ref name="store">
+            <param name="operationMode">STORE</param>
+        </interceptor-ref>
+        <interceptor-ref name="defaultStack" />
+
+        <result name="input">/jsp/voie/new.jsp</result>
+        <result name="success" type="redirectAction">
+            <param name="actionName">topo_detail</param>
+            <param name="id">${voie.topoguide.id}</param>
+        </result>
+       </action>
+
+        <action name="voie_detail"
+                class="org.lle.demo.topo.webapp.action.GestionVoieAction"
+                method="doDetail">
+
+            <result name="success">/jsp/voie/detail.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
         </action>
 
         <!-- Action affichant détail location -->
@@ -134,6 +160,43 @@
             <result type="redirectAction">
                 <param name="actionName">index</param>
             </result>
+        </action>
+
+        <action name="comment_new"
+                class="org.lle.demo.topo.webapp.action.GestionCommentAction"
+                method="doCreate">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+
+            <result name="input">/jsp/comment/new.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">topo_detail</param>
+                <param name="id">${commentaire.topoguide.id}</param>
+            </result>
+        </action>
+
+        <action name="search"
+                class="org.lle.demo.topo.webapp.action.SearchAction" method="doSearch">
+
+            <interceptor-ref name="store">
+                <param name="operationMode">STORE</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack" />
+
+            <result name="input">/jsp/search/search.jsp</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="success" type="redirectAction">
+            <param name="actionName">topo_detail</param>
+            <param name="id">${topo.id}</param>
+        </result>
+        </action>
+
+        <action name="result">
+            <result>/jsp/search/result.jsp</result>
         </action>
 
     </package>

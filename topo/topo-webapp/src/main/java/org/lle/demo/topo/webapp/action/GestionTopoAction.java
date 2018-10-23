@@ -3,6 +3,7 @@ package org.lle.demo.topo.webapp.action;
 import com.opensymphony.xwork2.ActionSupport;
 import org.lle.demo.topo.model.bean.Topo;
 import org.lle.demo.topo.model.bean.Utilisateur;
+import org.lle.demo.topo.model.bean.Voie;
 import org.lle.demo.topo.model.bean.exception.FunctionalException;
 import org.lle.demo.topo.model.bean.exception.NotFoundException;
 import org.lle.demo.topo.model.bean.exception.TechnicalException;
@@ -24,7 +25,8 @@ public class GestionTopoAction extends ActionSupport {
     // ----- Eléments en sortie
     private List<Topo> listTopo;
     public Topo topo;
-
+    public Utilisateur utilisateur;
+    public Voie voie;
     private List<Utilisateur> listUtilisateur;
 
     // ==================== Getters/Setters ====================
@@ -77,6 +79,10 @@ public class GestionTopoAction extends ActionSupport {
         } else {
             try {
                 topo = WebappHelper.getManagerFactory().getTopoManager().detailTopo(id);
+                int vIdutilisateur = topo.getIdUtilisateur();
+                utilisateur = WebappHelper.getManagerFactory().getUtilisateurManager().getUtilisateur(vIdutilisateur);
+                voie = WebappHelper.getManagerFactory().getVoieManager().detailVoie(id);
+
             } catch (NotFoundException pE) {
                 this.addActionError(getText("error.topo.notfound", Collections.singletonList(id)));
             }
@@ -114,14 +120,14 @@ public class GestionTopoAction extends ActionSupport {
                     this.addFieldError("topo.responsable.id", pEx.getMessage());
                 }
             }
-            // Date de création
-            //this.topo.setDateCreation(new Date());
+
 
             // Si pas d'erreur, ajout du projet...
             if (!this.hasErrors()) {
                 try {
 
-                    WebappHelper.getManagerFactory().getTopoManager().ajoutTopo(this.topo.getLibelle(), this.topo.getLieu(), this.topo.getResponsable());
+                    WebappHelper.getManagerFactory().getTopoManager().ajoutTopo(this.topo.getLibelle(),
+                            this.topo.getLieu(), this.topo.getSecteur(),this.topo.getStatut(), this.topo.getResponsable());
                     // Si ajout avec succès -> Result "success"
                     vResult = ActionSupport.SUCCESS;
                     this.addActionMessage("Projet ajouté avec succès");

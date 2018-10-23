@@ -15,7 +15,7 @@
     <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${driverClassName}" />
         <property name="url" value="${url}" />
-        <property name="username" value="${username}" />
+        <property name="username" value="${user}" />
         <property name="password" value="${password}" />
     </bean>
 
@@ -32,6 +32,18 @@
     </bean>
 
     <bean id="locationdao" class="org.lle.demo.topo.consumer.dao.LocationDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="commentdao" class="org.lle.demo.topo.consumer.dao.CommentDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="voiedao" class="org.lle.demo.topo.consumer.dao.VoieDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+    <bean id="searchdao" class="org.lle.demo.topo.consumer.dao.SearchDao">
         <property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
 

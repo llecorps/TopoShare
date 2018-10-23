@@ -27,6 +27,7 @@ public class GestionLocationAction extends ActionSupport {
     private Location location;
     private List<Topo> listTopo;
     private List<Utilisateur> listUtilisateur;
+    public Topo topo;
 
 
 
@@ -62,6 +63,14 @@ public class GestionLocationAction extends ActionSupport {
         return listUtilisateur;
     }
 
+    public Topo getTopo() {
+        return topo;
+    }
+
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
+
 
     // ==================== Méthodes ====================
     /**
@@ -84,6 +93,9 @@ public class GestionLocationAction extends ActionSupport {
         } else {
             try {
                 location = WebappHelper.getManagerFactory().getLocationManager().detailLocation(id);
+                int vIdtopo = location.getIdTopo();
+                topo = WebappHelper.getManagerFactory().getTopoManager().detailTopo(vIdtopo);
+
             } catch (NotFoundException pE) {
                 this.addActionError(getText("error.location.notfound", Collections.singletonList(id)));
             }

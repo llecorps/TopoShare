@@ -1,5 +1,7 @@
 package org.lle.demo.topo.model.bean;
 
+import com.sun.istack.internal.NotNull;
+
 /**
  * Created by esspressoh on 18.06.18.
  */
@@ -10,14 +12,34 @@ public class Voie {
     private String notation;
     private String hauteur;
     private String largeur;
-    private static Integer idSecteur;
+    private static Integer idTopo;
 
+    @NotNull
+    private Topo topoguide;
 
     public Voie(){
 
     }
 
     public Voie(int id) {
+    }
+
+    public Voie(String libelle, String notation, String hauteur, String largeur, Topo topoguide   ){
+
+        this.libelle = libelle;
+        this.notation = notation;
+        this.hauteur = hauteur;
+        this.largeur = largeur;
+        this.topoguide = topoguide;
+
+    }
+
+    public Topo getTopoguide() {
+        return topoguide;
+    }
+
+    public void setTopoguide(Topo topoguide) {
+        this.topoguide = topoguide;
     }
 
     public static Integer getId() {
@@ -27,11 +49,11 @@ public class Voie {
         id = pId;
     }
 
-    public static Integer getIdSecteur() {
-        return idSecteur;
+    public static Integer getIdTopo() {
+        return idTopo;
     }
-    public void setIdSecteur(Integer pIdSecteur) {
-        idSecteur = pIdSecteur;
+    public void setIdTopo(Integer pIdTopo) {
+        idTopo = pIdTopo;
     }
 
     public String getLibelle() {
@@ -72,7 +94,7 @@ public class Voie {
                 .append(vSEP).append("Notation=").append(notation)
                 .append(vSEP).append("Hauteur=").append(hauteur)
                 .append(vSEP).append("Largeur=").append(largeur)
-                .append(vSEP).append("Secteur=").append(idSecteur)
+                .append(vSEP).append("Topo=").append(idTopo)
                 .append("}");
         return vStB.toString();
     }

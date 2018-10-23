@@ -6,41 +6,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Topo</title>
-    <style type="text/css">
-        body{
-            position: relative; /* required */
-            padding-top: 100px;	/* prevent content to go underneath the fixed navbar */
-            background: url('assets/img/fond.jpg') no-repeat center center fixed;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-        }
-    </style>
+    <%@ include file="../_include/head.jsp" %>
 </head>
 
 <body>
-<%@ include file="../../WEB-INF/menu.jsp" %>
+<%@ include file="../menu.jsp" %>
 <div class="container">
     <%@ include file="../_include/header.jsp" %>
 
 <h2><s:text name="nav.listTopo" /></h2>
 
-<ul>
+    <ul class="list-group list-group-flush">
     <s:iterator value="listTopo">
-        <li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
 
             <s:a action="topo_detail">
                 <s:param name="id" value="id" />
-                <s:property value="lieu"/>
+
+                <s:property value="libelle"/>
+
             </s:a>
 
-            Owner :
-            <s:a action="utilisateur_detail">
-                <s:param name="id" value="topo.utilisateur_idutilisateur" />
-                <s:property value="topo.utilisateur.username"/>
-                <s:property value="projet.utilisateur.email"/>
-            </s:a>
+
         </li>
 
         </li>
@@ -50,6 +37,7 @@
 <h3><s:text name="nav.funcTopo" /></h3>
 
 <s:a action="topo_new"><s:text name="nav.newTopo" /></s:a>
+    <%@ include file="../_include/footer.jsp" %>
     </div>
 </body>
 </html>

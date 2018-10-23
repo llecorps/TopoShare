@@ -20,7 +20,7 @@ import java.util.List;
 @Named
 public class TopoManagerImpl implements TopoManager{
 
-    private String libelle, lieu;
+    private String libelle, lieu, statut, saecteur;
     private Utilisateur utilisateur;
 
     protected List<Topo> vListTopo;
@@ -47,10 +47,10 @@ public class TopoManagerImpl implements TopoManager{
 
    // public void ajoutTopo(String libelle, String lieu, Utilisateur utilisateur)  {
 
-    public void ajoutTopo(String libelle , String lieu,  Utilisateur utilisateur)  {
+    public void ajoutTopo(String libelle , String lieu, String secteur, String statut,  Utilisateur utilisateur)  {
 
 
-            int status=topodao.saveTopo(new Topo(libelle,  lieu, utilisateur));
+            int status=topodao.saveTopo(new Topo(libelle,  lieu, secteur, statut, utilisateur));
         System.out.println(status);
 
     }

@@ -1,26 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="/struts-tags" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <%@ include file="./_include/head.jsp" %>
+    <meta charset="utf-8" />
+    <title>Login</title>
+
+    <link href="<c:url value="/jsp/assets/css/bootstrap.css" />" rel="stylesheet">
+    <script src="<c:url value="/jsp/assets/js/jquery.js" />"></script>
+    <script src="<c:url value="/jsp/assets/js/bootstrap.min.js" />"></script>
+
+
+
 </head>
-
 <body>
-<%@ include file="../WEB-INF/menu.jsp" %>
+<%@ include file="menu.jsp" %>
 
 
-<div class="container">
-    <%@ include file="./_include/header.jsp" %>
-<h2>Connexion</h2>
+<div class="container" >
+    <%@ include file="_include/header.jsp" %>
+    <h2>Connexion</h2>
 
-<s:form action="login">
-    <s:textfield name="login" label="Identifiant" requiredLabel="true" />
-    <s:password name="password" label="Mot de passe" requiredLabel="true" />
 
-    <s:submit value="Connexion"/>
-</s:form>
-    </div>
+
+    <s:form action="login" class="form-group">
+
+        <s:textfield name="Login" label="Identifiant" requiredLabel="true" id="nameFieldId"/>
+        <s:password name="password" label="Mot de passe" requiredLabel="true" id="passFieldId" />
+        <s:submit value="Connexion"/>
+    </s:form>
+    <%@ include file="/jsp/_include/footer.jsp" %>
+</div>
 </body>
 </html>

@@ -3,11 +3,14 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+
     <%@ include file="../_include/head.jsp"%>
-</head>
+
 
 <body>
+<s:actionerror/>
+<s:actionmessage/>
+<%@ include file="../menu.jsp" %>
 <h2><s:text name="nav.detailUser" /></h2>
 
 <ul>
@@ -16,5 +19,6 @@
     <li>Email : <s:property value="utilisateur.email" /></li>
     <li>Password : <s:property value="utilisateur.password" /></li>
 </ul>
+<%@ include file="../_include/footer.jsp" %>
 </body>
 </html>
