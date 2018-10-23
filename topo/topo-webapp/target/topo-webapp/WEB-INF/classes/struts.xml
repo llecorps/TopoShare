@@ -179,7 +179,8 @@
             </result>
         </action>
 
-        <action name="search" class="org.lle.demo.topo.webapp.action.SearchAction" method="doSearch">
+        <action name="search"
+                class="org.lle.demo.topo.webapp.action.SearchAction" method="doSearch">
 
             <interceptor-ref name="store">
                 <param name="operationMode">STORE</param>
@@ -187,9 +188,11 @@
             <interceptor-ref name="defaultStack" />
 
             <result name="input">/jsp/search/search.jsp</result>
-            <result name="success" type="redirectAction">
-                    result</result>
             <result name="error">/jsp/error.jsp</result>
+            <result name="success" type="redirectAction">
+            <param name="actionName">topo_detail</param>
+            <param name="id">${topo.id}</param>
+        </result>
         </action>
 
         <action name="result">

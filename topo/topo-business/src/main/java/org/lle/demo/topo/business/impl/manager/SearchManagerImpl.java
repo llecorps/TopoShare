@@ -40,10 +40,10 @@ public class SearchManagerImpl implements SearchManager {
     }
 
     @Override
-    public Topo searchMot(String mot, String champ, String statut, String notation) throws FunctionalException, TechnicalException {
+    public Topo searchMot(String mot, String champ) throws FunctionalException, TechnicalException {
 
 
-        newTopo=topodao.getLibelleTopo(mot, statut, notation);
+        newTopo=topodao.getLibelleTopo(mot, champ);
 
         return newTopo;
     }

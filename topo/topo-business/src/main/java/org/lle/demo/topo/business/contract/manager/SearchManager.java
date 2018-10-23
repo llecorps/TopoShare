@@ -9,5 +9,5 @@ import org.lle.demo.topo.model.bean.exception.TechnicalException;
  */
 public interface SearchManager {
 
-    Topo searchMot (String Mot, String champ, String statut, String notation) throws FunctionalException, TechnicalException;
+    Topo searchMot (String Mot, String champ) throws FunctionalException, TechnicalException;
 }

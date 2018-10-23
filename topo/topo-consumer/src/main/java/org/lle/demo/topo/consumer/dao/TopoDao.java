@@ -50,8 +50,8 @@ public class TopoDao {
        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
         }
 
-    public Topo getLibelleTopo( String mot, String statut, String notation){
-        String vSQL="select * from topo where libelle ='"+mot+"' AND statut='"+statut+"'";
+    public Topo getLibelleTopo( String mot, String champ){
+        String vSQL="select * from topo where "+champ+"='"+mot+"'";
         RowMapper<Topo> vRowMapper = new TopoRM();
         return jdbcTemplate.queryForObject(vSQL, vRowMapper);
     }

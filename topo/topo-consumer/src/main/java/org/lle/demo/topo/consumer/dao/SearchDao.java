@@ -15,7 +15,7 @@ public class SearchDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Topo getTopo(String mot, String champ, String statut){
+    public Topo getTopo(String mot, String champ){
 
 
         String vSQL="select * from topo where idtopo ="+mot;

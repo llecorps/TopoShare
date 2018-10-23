@@ -77,7 +77,10 @@ public class SearchAction extends ActionSupport {
         if (this.search != null) {
             if (!this.hasErrors()) {
                 try {
-            WebappHelper.getManagerFactory().getSearchManager().searchMot(this.search.getMot(), this.search.getChamp(), this.search.getStatut(), this.search.getNotation());
+
+
+
+            topo =WebappHelper.getManagerFactory().getSearchManager().searchMot(this.search.getMot(), this.search.getChamp());
                     vResult = ActionSupport.SUCCESS;
                     this.addActionMessage("Recherche effectuée");
                 } catch (FunctionalException pEx) {
