@@ -12,6 +12,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.inject.Named;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by esspressoh on 13.10.18.
@@ -21,6 +23,7 @@ public class SearchManagerImpl implements SearchManager {
 
     private  Search newSearch;
     private Topo newTopo;
+    protected List<Topo> vListTopo;
 
     /** Logger pour la classe */
     private static final Log LOGGER = LogFactory.getLog(TopoManagerImpl.class);
@@ -40,12 +43,13 @@ public class SearchManagerImpl implements SearchManager {
     }
 
     @Override
-    public Topo searchMot(String mot, String champ) throws FunctionalException, TechnicalException {
+    public List<Topo> searchMot(String mot, String champ) throws FunctionalException, TechnicalException {
 
+        vListTopo = new ArrayList<>() ;
 
-        newTopo=topodao.getLibelleTopo(mot, champ);
+        vListTopo=topodao.getLibelleTopo(mot, champ);
 
-        return newTopo;
+        return vListTopo;
     }
 
 

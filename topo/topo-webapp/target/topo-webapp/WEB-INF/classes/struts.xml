@@ -182,22 +182,12 @@
         <action name="search"
                 class="org.lle.demo.topo.webapp.action.SearchAction" method="doSearch">
 
-            <interceptor-ref name="store">
-                <param name="operationMode">STORE</param>
-            </interceptor-ref>
-            <interceptor-ref name="defaultStack" />
-
             <result name="input">/jsp/search/search.jsp</result>
             <result name="error">/jsp/error.jsp</result>
-            <result name="success" type="redirectAction">
-            <param name="actionName">topo_detail</param>
-            <param name="id">${topo.id}</param>
-        </result>
+            <result name="success">/jsp/search/result.jsp</result>
+
         </action>
 
-        <action name="result">
-            <result>/jsp/search/result.jsp</result>
-        </action>
 
     </package>
 </struts>

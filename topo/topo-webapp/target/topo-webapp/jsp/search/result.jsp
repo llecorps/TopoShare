@@ -12,21 +12,25 @@
     <%@ include file="../_include/header.jsp" %>
 
 
-    <h2><s:text name="nav.detailTopo" /></h2>
+    <h2>Résultat</h2>
 
-    <div class="card " style="width: 18rem;">
-        <div class="card-body">
-            <ul>
+    <ul class="list-group list-group-flush">
+        <s:iterator value="listTopo">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
 
-                <li>ID : <s:property value="topo.id" /></li>
-                <li>Libelle : <s:property value="topo.libelle" /></li>
-                <li>Lieu : <s:property value="topo.lieu" /></li>
-                <li>Secteur : <s:property value="topo.secteur" /></li>
-                <li>Statut : <s:property value="topo.statut" /></li>
+                <s:a action="topo_detail">
+                    <s:param name="id" value="id" />
 
-            </ul>
-        </div>
-    </div>
+                    <s:property value="libelle"/>
+
+                </s:a>
+
+
+            </li>
+
+            </li>
+        </s:iterator>
+    </ul>
 
 
     </div>

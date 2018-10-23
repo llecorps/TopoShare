@@ -35,9 +35,7 @@ public class TopoDao {
     public List<Topo> getlistTopo() {
 
         String vSQL="select * from topo";
-
         RowMapper<Topo> vRowMapper = new TopoRM();
-
         vListTopo = jdbcTemplate.query(vSQL, vRowMapper);
 
         return vListTopo;
@@ -50,10 +48,12 @@ public class TopoDao {
        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
         }
 
-    public Topo getLibelleTopo( String mot, String champ){
+    public List<Topo> getLibelleTopo( String mot, String champ){
+
         String vSQL="select * from topo where "+champ+"='"+mot+"'";
         RowMapper<Topo> vRowMapper = new TopoRM();
-        return jdbcTemplate.queryForObject(vSQL, vRowMapper);
+        vListTopo = jdbcTemplate.query(vSQL, vRowMapper);
+        return vListTopo;
     }
 
 }
