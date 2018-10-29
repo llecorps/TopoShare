@@ -37,10 +37,22 @@
             <li class="nav-item">
                 <s:a action="location_list" class="nav-link"><s:text name="nav.listLocation" /></s:a> <span class="sr-only">(current)</span></a>
             </li>
+
+            <li class="nav-item">
+                <s:if test="#session.utilisateur">
+                    <s:a action="logout" class="nav-link">Logout</s:a>
+                </s:if>
+                <s:else>
+                    <s:a action="login" class="nav-link">Login</s:a>
+                </s:else>
+                <span class="sr-only">(current)</span></a>
+            </li>
+
             <li class="nav-item">
 
                 <s:a action="utilisateur_new" class="nav-link disabled"><s:text name="nav.login" /></s:a> <span class="sr-only">(current)</span></a>
             </li>
+
 
         </ul>
 

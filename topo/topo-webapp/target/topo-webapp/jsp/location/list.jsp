@@ -31,8 +31,6 @@
 
                 <s:property value="topo.libelle"/>
 
-
-                <s:property value="topo.lieu"/>
             </s:a>
         </li>
 

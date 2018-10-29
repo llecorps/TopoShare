@@ -15,6 +15,10 @@
     <%@ include file="../_include/header.jsp" %>
 
 <h2>User Add</h2>
+    <s:if test="#session.utilisateur">
+    <s:a action="logout">Vous êtes déja connectés !</s:a>
+    </s:if>
+    <s:else>
 
 <s:form action="utilisateur_new">
 
@@ -24,6 +28,7 @@
     <s:submit value="OK"/>
 
 </s:form>
+    </s:else>
     <%@ include file="../_include/footer.jsp" %>
     </div>
 </body>
